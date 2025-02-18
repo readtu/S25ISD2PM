@@ -1,4 +1,5 @@
 """
+Can I push?
 ASGI config for CourseCompass project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
