@@ -8,7 +8,7 @@
   
   /* Style the header */
   .header {
-    background-color: #F1F1F1;
+    background-color: #a2ffa796;
     text-align: center;
     padding: 20px;
   }
@@ -31,7 +31,7 @@
   
   /* Links - change color on hover */
   .topnav a:hover {
-    background-color: #ffdaa9;
+    background-color: #dddddd;
     color: rgb(0, 0, 0);
   }
   .background {
