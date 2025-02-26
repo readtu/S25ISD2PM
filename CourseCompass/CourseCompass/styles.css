@@ -1,57 +1,98 @@
+/* Reset and basic styles */
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-  }
-  
-  /* Style the header */
-  .header {
-    background-color: #a2ffa796;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  /* The navbar container */
-  .topnav {
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  /* Navbar links */
-  .topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  /* Links - change color on hover */
-  .topnav a:hover {
-    background-color: #dddddd;
-    color: rgb(0, 0, 0);
-  }
-  .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url('images/home_page_bg.jpg') no-repeat center;
-    background-size: cover;
-    z-index: -1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #5c5c5c;
+  padding: 10px 20px;
+  height: 60px;
+  color: rgb(255, 255, 255);
+}
 
+.navbar a:hover{
+  color: rgb(171, 200, 164);
+}
 
+/* Left side of navbar */
+.nav-left a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+}
 
+.nav-left .logo {
+  font-weight: bold;
+  font-size: 30px;
+}
 
+/* Profile container */
+.profile-container {
+  position: relative;
+  height: 60px;
+  width: 60px;
+  background: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.profile-container:hover{
+  background: #e7e7e7;
+}
 
+/* Profile icon inside */
+.profile-icon {
+  font-size: 24px;
+  color: black;
+}
 
+/* Dropdown menu (hidden by default) */
+.profile-dropdown {
+  position: absolute;
+  top: 65px;
+  right: 0;
+  background: white;
+  width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: none;
+  flex-direction: column;
+}
 
+/* Dropdown links */
+.profile-dropdown a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  display: block;
+}
 
+.profile-dropdown a:hover {
+  background: #ececec;
+  color: black;
+  border-radius: 5px;
+}
 
+/* Show dropdown on hover */
+.profile-container:hover .profile-dropdown {
+  display: flex;
+}
 
-
-
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('images/home_page_bg.jpg') no-repeat center;
+  background-size: cover;
+  z-index: -1;
+}

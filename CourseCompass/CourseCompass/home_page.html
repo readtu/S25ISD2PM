@@ -2,22 +2,26 @@
 <html lang="en">
     <head>
 		<meta charset="UTF-8">
-		<title>Home Page</title>
 		<link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
 		<div class="background"></div>
-		<div class="header">
-			<h1>Page Links</h1>
-		</div>
-		<div class="topnav">
-			<a href="Page HTML's/edit_page.html">Edit Page</a>
-            <a href="Page HTML's/login_page.html">Login Page</a>
-            <a href="Page HTML's/account_page.html">Account Settings/Notification Page</a>
-            <a href="Page HTML's/student_page.html">Student/Schedule Page</a>
-            <a href="Page HTML's/catalog_page.html">Catalog/Rooms Page</a>
-            <a href="Page HTML's/task_page.html">Completed/Pending Tasks Page</a>
-            <a href="Page HTML's/permissions_page.html">User Permissions Page</a>
-		</div>
+		<nav class="navbar">
+			<div class="nav-left">
+				<a href="#" class="logo">Course Compass</a>
+				<a href="Page HTML's/edit_page.html">Edit Page</a>
+            	<a href="Page HTML's/catalog_page.html">Catalog</a>
+            	<a href="Page HTML's/task_page.html">Completed/Pending Tasks</a>
+            	<a href="Page HTML's/permissions_page.html">Permissions</a>
+			</div>
+			<div class="profile-container">
+				<div class="profile-icon"><img src="images/profile_image.jpg" alt="Profile" style="width:60px;height:60px;"></div>
+				<div class="profile-dropdown">
+					<a href="Page HTML's/profile_page.html">Profile</a>
+					<a href="Page HTML's/settings_page.html">Settings</a>
+					<a href="#">Logout</a>
+				</div>
+			</div>
+		</nav>
     <body>
 </html>
