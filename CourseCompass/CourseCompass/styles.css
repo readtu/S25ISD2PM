@@ -17,10 +17,6 @@
   color: rgb(255, 255, 255);
 }
 
-.navbar a:hover{
-  color: rgb(171, 200, 164);
-}
-
 /* Left side of navbar */
 .nav-left a {
   color: rgb(255, 255, 255);
@@ -46,6 +42,7 @@
   cursor: pointer;
   border-radius: 2px;
 }
+
 .profile-container:hover{
   background: #e7e7e7;
 }
@@ -67,6 +64,7 @@
   border-radius: 5px;
   display: none;
   flex-direction: column;
+  border-radius: 2px;
 }
 
 /* Dropdown links */
@@ -95,4 +93,53 @@
   background: url('images/home_page_bg.jpg') no-repeat center;
   background-size: cover;
   z-index: -1;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #5c5c5c;
+  color: white;
+  padding: 16px;
+  font-size: 24px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background: #e4e4e4;
+  color: black;
+  border-radius: 5px;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #27936c;
+  border-radius: 5px;
 }
