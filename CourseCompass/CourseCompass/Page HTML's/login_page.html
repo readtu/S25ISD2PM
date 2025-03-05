@@ -4,25 +4,38 @@
 		<meta charset="UTF-8">
 		<title>Login Page</title>
 		<link rel="stylesheet" href="../styles.css">
-	</head>
-	<body>
-	        <div class="header">
-		        <h1>Page Links</h1>
-	        </div>
-	        <div class="topnav">
-                        <a href="../home_page.html">Home Page</a>
-                </div>
-				<div class="login">
-					<label>Email:</label>
-					<input type="email" required>
-					<label>Password:</label>
-					<input type="password" required>
-					<br>
-					<label>
-						<input type="checkbox"> Remember Me
-					</label>
-					<br>
-					<button type="submit">Submit</button>
+		<div class="background"></div>
+		<nav class="navbar">
+			<div class="nav-left">
+				<a href="../home_page.html" class="logo">Hammer</a>
+			</div>
+			<div class="profile-container">
+				<div class="profile-icon"><img src="images/profile_image.jpg" alt="Profile" style="width:60px;height:60px;"></div>
+				<div class="profile-dropdown">
+					<a href="Page HTML's/profile_page.html">Profile</a>
+					<a href="Page HTML's/settings_page.html">Settings</a>
+					<a href="#">Logout</a>
 				</div>
-        </body>
+			</div>
+		</nav>
+	</head>
+	<body class="body">
+	    <form style="border:5px solid #ccc">
+		    <h1>Login</h1>
+			<br>
+			<div class="login">
+				<label><b>Email:</b></label>
+				<input type="email" required>
+				<label><b>Password:</b></label>
+				<input type="password" required>
+				<br>
+				<label>
+					<input type="checkbox"> Remember Me
+				</label>
+				<br>
+				<br>
+				<button type="submit">Login</button>
+			</div>
+		</form>
+    </body>
 </html>
