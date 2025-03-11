@@ -20,12 +20,32 @@
 		</nav>
 	</head>
 	<body class="body">
-	    <form style="border:5px solid #ccc">
-		    <h1>Login</h1>
+		<style>
+			/* Center the form element */
+			form {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  background-color: #5c5c5c;
+			  border:5px solid #5c5c5c;
+			  width: 400px;
+			  height: 250px;
+			}
+		  </style>
+	    <form>
+		    <h1 style="color: white;">Login</h1>
 			<br>
 			<div class="login">
-				<label><b>Email:</b></label>
+				<style>
+					label {
+						color: white;
+						display: inline-block;
+					}
+				</style>
+				<label><b>        Email:</b></label>
 				<input type="email" required>
+				<br>
 				<label><b>Password:</b></label>
 				<input type="password" required>
 				<br>
