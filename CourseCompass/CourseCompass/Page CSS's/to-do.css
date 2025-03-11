@@ -1,0 +1,15 @@
+/* Center the todo box */
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #5c5c5c;
+    border:5px solid #5c5c5c;
+    width: 1000px;
+    height: 500px;
+  }
+label {
+    color: white;
+    display: inline-block;
+    }
