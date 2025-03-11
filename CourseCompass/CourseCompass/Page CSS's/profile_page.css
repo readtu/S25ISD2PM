@@ -1,6 +1,24 @@
-.logout-container {
+.profile-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #5c5c5c;
+    border: 5px solid #5c5c5c;
+    width: 400px;
+    height: 250px;
+    color: white; /* Ensures text is readable */
     text-align: center;
-    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.logout-container {
+    position: absolute;
+    top: calc(50% + 150px); /* Adjust position below the profile card */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .logout-button {
