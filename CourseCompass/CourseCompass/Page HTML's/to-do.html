@@ -3,8 +3,6 @@
     <head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="../styles.css">
-	</head>
-	<body>
 		<div class="background"></div>
 		<nav class="navbar">
 			<div class="nav-left">
@@ -32,6 +30,36 @@
 				</div>
 			</div>
 		</nav>
-		<h1>Tasks To-Do</h1>
-    <body>
+	</head>
+	<body class="body">
+		<style>
+			/* Center the todo box */
+			form {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  background-color: #5c5c5c;
+			  border:5px solid #5c5c5c;
+			  width: 1000px;
+			  height: 500px;
+			}
+		  </style>
+   			<form>
+				<h1 style="color: white;">Todo</h1>
+				<br>
+				<div class="todo">
+				<style>
+					label {
+						color: white;
+						display: inline-block;
+					}
+				</style>
+				<br>
+				<br>
+				<button type="submit">APPROVE</button>
+				<button type="submit">DENY</button>
+			</div>
+		</form>
+	</body>
 </html>
