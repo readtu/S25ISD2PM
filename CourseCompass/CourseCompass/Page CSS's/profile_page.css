@@ -9,8 +9,9 @@
     height: 250px;
     color: white; /* Ensures text is readable */
     text-align: left;
-    padding: 80px;
+    padding: 20px;
     border-radius: 10px;
+    line-height: 1.6;
 }
 
 .logout-container {
