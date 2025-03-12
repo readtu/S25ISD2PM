@@ -12,6 +12,7 @@ body {
     height: 250px;
     color: white; /* Ensures text is readable */
     text-align: left;
+    align-items: center;
     padding: 20px;
     border-radius: 10px;
     line-height: 2;
