@@ -7,7 +7,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #5c5c5c;
-    border: 5px solid #5c5c5c;
+    border: 1px solid #efefef;
     width: 400px;
     height: 250px;
     color: white; /* Ensures text is readable */
