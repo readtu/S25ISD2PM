@@ -11,6 +11,7 @@ body {
     width: 400px;
     height: 250px;
     color: white; /* Ensures text is readable */
+    display: flex;
     text-align: left;
     align-items: center;
     justify-content: center;
