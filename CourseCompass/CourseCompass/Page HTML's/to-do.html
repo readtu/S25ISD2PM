@@ -3,7 +3,7 @@
     <head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="../styles.css">
-		<link rel="stylesheet" href="to-do.css">
+		<link rel="stylesheet" href="../Page CSS's/to-do.css">
 		<div class="background"></div>
 	</head>
 	<body>
@@ -33,11 +33,19 @@
 				</div>
 			</div>
 		</nav>
-		<div class="todo">
-			<h1 style="color: white;">Todo</h1>
+		<header>
+			<h1>TO-DO LIST</h1>
+		</header>
+		<div class="container">
+			<ul class="task-list">
+				<li class="task-item">
+					<span>Task 1</span>
+					<div class="button-container">
+						<button class="approve">APPROVE</button>
+						<button class="deny">DENY</button>
+					</div>
+				</li>				
+			</ul>
 		</div>
-      	<br>
-		<button type="submit">APPROVE</button>
-      	<button type="submit">DENY</button>
 	</body>
 </html>
