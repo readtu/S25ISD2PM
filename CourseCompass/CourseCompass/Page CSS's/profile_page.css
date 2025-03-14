@@ -6,11 +6,11 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #5c5c5c;
-    border: 1px solid #efefef;
+    background-color: white;
+    border: 4px solid #5c5c5c;
     width: 400px;
     height: 250px;
-    color: white; /* Ensures text is readable */
+    color: #5c5c5c; /* Ensures text is readable */
     text-align: left;
     align-items: center;
     justify-content: center;
