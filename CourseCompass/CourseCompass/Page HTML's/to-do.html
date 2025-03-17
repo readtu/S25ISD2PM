@@ -49,3 +49,30 @@
 		</div>
 	</body>
 </html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".approve").forEach(button => {
+            button.addEventListener("click", function () {
+                let taskItem = this.parentElement.parentElement;
+                let taskText = taskItem.querySelector("span").textContent;
+
+                // Store in localStorage
+                let approvedTasks = JSON.parse(localStorage.getItem("approvedTasks")) || [];
+                approvedTasks.push(taskText);
+                localStorage.setItem("approvedTasks", JSON.stringify(approvedTasks));
+
+                // Remove task from the list
+                taskItem.remove();
+            });
+        });
+    });
+	document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".deny").forEach(button => {
+            button.addEventListener("click", function () {
+				let taskItem = this.parentElement.parentElement;
+                let taskText = taskItem.querySelector("span").textContent;
+				taskItem.remove();
+			});
+		});
+	});
+</script>
