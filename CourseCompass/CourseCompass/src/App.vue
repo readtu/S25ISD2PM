@@ -1,47 +1,55 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="app">
+    <div class="background"></div>
+    <nav class="navbar">
+      <div class="nav-left">
+        <router-link to="/home" class="logo">Hammer</router-link>
+        
+        <div class="dropdown">
+          <button class="dropbtn">Catalog</button>
+          <div class="dropdown-content">
+            <router-link to="/catalog">Catalog</router-link>
+          </div>
+        </div>
+        
+        <div class="dropdown">
+          <button class="dropbtn">Tasks</button>
+          <div class="dropdown-content">
+            <router-link to="/to-do">To-Do</router-link>
+            <router-link to="/complete">Complete</router-link>
+          </div>
+        </div>
+      </div>
+      
+      <div class="profile-container" @click="toggleDropdown">
+        <div class="profile-icon">
+          <img src="@/assets/profile_image.jpg" alt="Profile" style="width:60px;height:60px;">
+        </div>
+        <div v-if="showDropdown" class="profile-dropdown">
+          <router-link to="/profile">Profile</router-link>
+          <router-link to="/settings">Settings</router-link>
+          <router-link to="/login">Logout</router-link>
+        </div>
+      </div>
+    </nav>
+  </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      showDropdown: false,
+    };
+  },
+  methods: {
+    toggleDropdown() {
+      this.showDropdown = !this.showDropdown;
+    },
+  },
+};
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+@import '@/assets/styles.css';
 </style>
