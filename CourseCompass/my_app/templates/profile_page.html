@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Profile</title>
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="nav-left">
+				<a href="#" class="logo">Hammer</a>
+            	<a href="Page HTML's/catalog_page.html">Catalog</a>
+            	<a href="Page HTML's/task_page.html">Tasks</a>
+			</div>
+	    </nav>
+            </div>
+			<div class="profile-card">
+				<h2>{{ user.username }}</h2>
+				<p><strong>Email:</strong> <a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+				<p><strong>Password:</strong> ********</p>
+			</div>
+			<div class="logout-container">
+				<a href="Page HTML's/login_page.html" class="logout-button">Log Out</a>
+			</div>
+    </body>
+</html>
