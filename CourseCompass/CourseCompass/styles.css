@@ -143,3 +143,20 @@
   background-color: #27936c;
   border-radius: 5px;
 }
+
+.bigContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px;
+  border: 1px solid #bb0505;
+  padding: 200px;
+}
+.smallContainer {
+  display: flex;
+  justify-content: space-around;
+  height: 200px;
+  border: 1px solid #000000;
+  text-align: center;
+  
+}

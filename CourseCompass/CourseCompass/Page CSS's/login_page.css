@@ -11,7 +11,10 @@
 
 .login {
     color: white;
-	display: inline;
+	float: left; 
+    width: 10em; 
+    margin-right: 1em; 
+    text-align: right;
     font-size: large;
 }
 
@@ -23,3 +26,5 @@
     border: 2px solid black;
     background-color: white;
 }
+
+

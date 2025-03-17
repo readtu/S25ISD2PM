@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Profile</title>
-		<link rel="stylesheet" href="../styles.css">
-		<link rel="stylesheet" href="profile_page.css">
-	</head>
-	<body>
-		<nav class="navbar">
-			<div class="nav-left">
-				<a href="#" class="logo">Hammer</a>
-            	<a href="Page HTML's/catalog_page.html">Catalog</a>
-            	<a href="Page HTML's/task_page.html">Tasks</a>
-			</div>
-	    </nav>
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../Page CSS's/profile_page.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="../home_page.html" class="logo">Hammer</a>
+            <div class="dropdown">
+                <button class="dropbtn">Catalog</button>
+                <div class="dropdown-content">
+                    <a href="../Page HTML's/catalog_page.html">Catalog</a>
+                </div>
             </div>
-			<div class="profile-card">
-				<h2>{{ user.username }}</h2>
-				<p><strong>Email:</strong> <a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
-				<p><strong>Password:</strong> ********</p>
-			</div>
-			<div class="logout-container">
-				<a href="Page HTML's/login_page.html" class="logout-button">Log Out</a>
-			</div>
-    </body>
+            <div class="dropdown">
+                <button class="dropbtn">Tasks</button>
+                <div class="dropdown-content">
+                    <a href="../Page HTML's/to-do.html">To-Do</a>
+                    <a href="../Page HTML's/complete.html">Complete</a>
+                </div>
+            </div>
+        </div>
+        <div class="profile-container">
+            <div class="profile-icon">
+                <img src="../images/profile_image.jpg" alt="Profile" style="width:60px;height:60px;">
+            </div>
+            <div class="profile-dropdown">
+                <a href="../Page HTML's/profile_page.html">Profile</a>
+                <a href="../Page HTML's/settings_page.html">Settings</a>
+                <a href="../Page HTML's/login_page.html">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="profile-card">
+        <h2>Andrew Beaverson</h2>
+        <p><strong>Email:</strong> <a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+        <p><strong>Password:</strong> ********</p>
+        <p><strong>User Type:</strong> Department Chair</p>
+        <p><strong>Reports To:</strong> Brian Dewar</p>
+    </div>
+
+    <div class="logout-container">
+        <a href="../Page HTML's/login_page.html" class="logout-button">Log Out</a>
+    </div>
+</body>
 </html>
