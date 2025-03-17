@@ -10,7 +10,7 @@ body {
     border: 2px solid #5c5c5c;
     width: 400px;
     height: 250px;
-    color: #5c5c5c; /* Ensures text is readable */
+    color: #5c5c5c;
     text-align: left;
     align-items: center;
     justify-content: center;
