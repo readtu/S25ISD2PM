@@ -11,7 +11,7 @@
             <router-link to="/catalog">Catalog</router-link>
           </div>
         </div>
-        
+         
         <div class="dropdown">
           <button class="dropbtn">Tasks</button>
           <div class="dropdown-content">
