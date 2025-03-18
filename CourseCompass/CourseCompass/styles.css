@@ -160,15 +160,26 @@
   text-align: center;
   
 }
-.iframe-container {
-  width: 400px; /* Adjust width */
-  height: 300px; /* Adjust height */
+.iframe-container-1 {
+  width: 500px;
+  height: 600px;
   border: 2px solid #000;
   overflow: hidden;
+  position: absolute; 
+  top: 120px; 
+  left: 200px;
 }
 
 iframe {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+.calendar{
+  width: 500px;
+  height: 600px;
+  position: absolute; 
+  top: 120px; 
+  right: 200px; 
 }
