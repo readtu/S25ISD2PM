@@ -36,7 +36,54 @@
         </nav>
         
         <h1>Course Catalog</h1>
-        <h2>Filter options: Day, Week, Month, Semester, Time</h2>
+        <div class="filter-options">
+            <div class="dropdown">
+                <button class="dropbtn">Department</button>
+                <div class="dropdown-content">
+                    <a href="#">CSE</a>
+                    <a href="#">English</a>
+                    <a href="#">Literature</a>
+                    <a href="#">Art</a>
+                </div>
+            </div>
+    
+            <div class="dropdown">
+                <button class="dropbtn">Building</button>
+                <div class="dropdown-content">
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Euler</button>
+                        <div class="dropdown-content">
+                            <a href="#">Floor 1</a>
+                            <a href="#">Floor 2</a>
+                            <a href="#">Floor 3</a>
+                            <a href="#">Floor 4</a>
+                        </div>
+                    </div>
+                    <a href="#">Reade</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Reade</button>
+                        <div class="dropdown-content">
+                        <button><a href="#">Floor 1</a></button>
+                            <a href="#">Floor 2</a>
+                            <a href="#">Floor 3</a>
+                            <a href="#">Floor 4</a>
+                        </div>
+                    </div>
+                    <a href="#">Randle</a>
+                </div>
+            </div>
+    
+            <div class="dropdown">
+                <button class="dropbtn">Room Size</button>
+                <div class="dropdown-content">
+                    <a href="#">Brand A</a>
+                    <a href="#">Brand B</a>
+                    <a href="#">Brand C</a>
+                </div>
+            </div>
+
+        </div>
         
         <div class="catalog-container">
             <div class="course-card">
@@ -61,10 +108,9 @@
 </html>
 
 <style>
-/* General Body and Text Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background: #f4f4f9;
     margin: 0;
     padding: 0;
 }
@@ -74,12 +120,11 @@ h1, h2 {
     color: #333;
 }
 
-/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background: #333;
     padding: 10px 20px;
     color: white;
 }
@@ -90,14 +135,14 @@ h1, h2 {
     padding: 10px;
 }
 
-.nav-left .dropdown, .profile-container {
+.dropdown, .profile-container {
     position: relative;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #333;
+    background: #333;
     min-width: 160px;
     z-index: 1;
 }
@@ -107,14 +152,13 @@ h1, h2 {
 }
 
 .dropbtn {
-    background-color: #333;
+    background: #333;
     color: white;
     padding: 10px;
     border: none;
     cursor: pointer;
 }
 
-/* Profile Container */
 .profile-container {
     display: flex;
     align-items: center;
@@ -125,16 +169,15 @@ h1, h2 {
     margin-right: 10px;
 }
 
-/* Catalog Container */
 .catalog-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin: 20px;
 }
 
 .course-card {
-    background-color: white;
+    background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -150,16 +193,31 @@ h1, h2 {
     color: #555;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .catalog-container {
-        grid-template-columns: 1fr 1fr;
-    }
+.dropdown-content .dropdown {
+    position: relative;
 }
 
-@media (max-width: 480px) {
-    .catalog-container {
-        grid-template-columns: 1fr;
-    }
+.dropdown-content .dropdown .dropbtn {
+    background: #f9f9f9;
+    color: black;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dropdown-content .dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(94, 2, 2, 0.2);
+    border-radius: 4px;
+}
+
+.dropdown-content .dropdown:hover .dropdown-content {
+    display: block;
 }
 </style>
