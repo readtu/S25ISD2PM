@@ -21,3 +21,15 @@ from . import views
 urlpatterns = [
     path('', views.home_page_view, name='home') #admin.site.urls),
 ]
+from django.urls import path
+
+from .views import login_view
+urlpatterns = [
+    path("login/", login_view, name="login"),
+]
+
+from django.urls import include
+
+urlpatterns = [
+    path("my_app/", include("my_app.urls")),
+]
