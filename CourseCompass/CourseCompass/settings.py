@@ -76,17 +76,12 @@ WSGI_APPLICATION = 'CourseCompass.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql',
-        'NAME': 'sqlserver',
-        'USER': 'SA',
-        'PASSWORD': 'YourStrong!Passw0rd',
-        'HOST': '192.168.1.100',
-        'PORT': '1433',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-            'TrustServerCertificate': 'yes',  # Avoids SSL certificate issues
-            'autocommit': True,  # Ensures transactions don't lock up
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hammer',
+        'USER': 'cranzau',
+        'PASSWORD': 'test',
+        'HOST': '10.120.160.153',
+        'PORT': '5432', 
     }
 }
 
