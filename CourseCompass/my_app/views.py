@@ -2,6 +2,26 @@ from django.http import HttpRepsonse
 from django.template import loader
 from django.shortcuts import render
 
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.http import JsonResponse
+from .models import LoginForm
+
 def home_page_view(request):
 	return render(request, "templates/home_page.html")
 # Create your views here.
+def login_view(request):
+    if request.method == "POST":
+        form = LoginForm(data=request.POST)
+        if form.is_valid():
+            user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
+            if user:
+                login(request, user)
+                return JsonResponse({'success': True, 'message': 'Login successful!'}, status=200)
+            else:
+                return JsonResponse({'success': False, 'message': 'Invalid credentials'}, status=400)
+        else:
+            return JsonResponse({'success': False, 'message': 'Form is invalid'}, status=400)
+    
+    form = LoginForm()
+    return render(request, "login.html", {"form": form})
