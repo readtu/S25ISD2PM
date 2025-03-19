@@ -1,7 +1,12 @@
 function validateForm() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    var errorMessage = '';
+    //var errorMessage = 'Please enter your username and password.';
+
+    var fakeUser = {
+        username: "testuser",
+        password: "test123"
+    };
 
     // Check if the username is empty
     if (username == "") {
@@ -20,5 +25,14 @@ function validateForm() {
     }
 
     // If no errors, allow form submission
-    return true;
+    //return true;
+
+    if (username === fakeUser.username && password === fakeUser.password) {
+        alert("Login successful! Redirecting...");
+        window.location.href = "../home_page.html"; // Redirect to the homepage
+        return true; // Prevent actual form submission for now
+    } else {
+        alert("Invalid username or password.");
+        return false; // Prevent form submission
+    }
 }
