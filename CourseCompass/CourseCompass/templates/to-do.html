@@ -36,20 +36,51 @@
 		<header>
 			<h1>TO-DO LIST</h1>
 		</header>
+		<div class="department-filter">
+			<label for="department-filter">Filter by Department:</label>
+			<select id="department-filter">
+    			<option value="all">All</option>
+    			<option value="COS">COS</option>
+    			<option value="ENG">ENG</option>
+			</select>
+		</div>
 		<div class="container">
 			<ul class="task-list">
-				<li class="task-item">
+				<li class="task-item" data-department="COS">
 					<span>Task 1</span>
 					<div class="button-container">
 						<button class="approve">APPROVE</button>
 						<button class="deny">DENY</button>
 					</div>
-				</li>				
+				</li>
+				<li class="task-item" data-department="ENG">
+					<span>Task 2</span>
+					<div class="button-container">
+						<button class="approve">APPROVE</button>
+						<button class="deny">DENY</button>
+					</div>
+				</li>			
 			</ul>
 		</div>
 	</body>
 </html>
 <script>
+	document.addEventListener("DOMContentLoaded", function () {
+        const filterDropdown = document.getElementById("department-filter");
+        const tasks = document.querySelectorAll(".task-item");
+
+        filterDropdown.addEventListener("change", function () {
+            const selectedDepartment = this.value;
+
+            tasks.forEach(task => {
+                if (selectedDepartment === "all" || task.getAttribute("data-department") === selectedDepartment) {
+                    task.style.display = "flex"; // Show task
+                } else {
+                    task.style.display = "none"; // Hide task
+                }
+            });
+        });
+    });
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".approve").forEach(button => {
             button.addEventListener("click", function () {
