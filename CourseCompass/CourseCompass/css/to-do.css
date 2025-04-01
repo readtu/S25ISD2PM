@@ -45,8 +45,10 @@ header {
   margin: 10px 0;
   border: 1px solid #ddd;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items:center;
 }
+
 button {
   padding: 5px 10px;
   border: none;

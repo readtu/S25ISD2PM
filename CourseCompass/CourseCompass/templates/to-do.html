@@ -43,6 +43,9 @@
     			<option value="COS">COS</option>
     			<option value="ENG">ENG</option>
 			</select>
+			<label>
+				<input type="checkbox" id="last-filter"> Same as Last Year
+			</label>
 		</div>
 		<div class="container">
 			<ul class="task-list">
@@ -81,6 +84,13 @@
             });
         });
     });
+	document.getElementById("last-filter").addEventListener("change", function() {
+            if (this.checked) {
+                alert("I haven't coded this yet!");
+            } else {
+                alert("still haven't :)");
+            }
+        });
     document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".approve").forEach(button => {
             button.addEventListener("click", function () {
