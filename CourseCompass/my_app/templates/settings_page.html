@@ -1,16 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>Settings</title>
-		<link rel="stylesheet" href="../styles.css">
+		<link rel="stylesheet" href="{% static 'styles.css' %}">
 	</head>
 	<body>
-	        <div class="header">
-		        <h1>Page Links</h1>
-	        </div>
-	        <div class="topnav">
-                        <a href="./home_page.html">Home Page</a>
-                </div>
-        </body>
+	    <div class="header">
+		    <h1>Page Links</h1>
+	    </div>
+	    <div class="topnav">
+            <a href="{% url 'home' %}">Home Page</a>
+        </div>
+	</body>
 </html>

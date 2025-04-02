@@ -7,7 +7,6 @@ from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
 from .models import LoginForm
 
-#def my_view(request):
 
 def catalog_page_view(request):
 	return render(request, "catalog_page.html")
@@ -26,8 +25,6 @@ def to_do_view(request):
 
 def home_page_view(request):
 	return render(request, "home_page.html")
-	#template = loader.get_template('home_page.html')
-	#return HttpResonse(template.render(request))
 
 def login_view(request):
 	if request.method == "POST":
@@ -41,4 +38,4 @@ def login_view(request):
 		else:
 			return JsonResponse({'success': False, 'message': 'Form is invalid'}, status=400)
 	form = LoginForm()
-	return render(request, "templates/login.html", {"form": form})
+	return render(request, "login.html", {"form": form})
