@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <title>Catalog - Hammer</title>
+    </head>
+    <body>
+        <div class="background"></div>
+        <nav class="navbar">
+            <div class="nav-left">
+                <!-- Using the URL name defined in your urls.py -->
+                <a href="{% url 'home' %}" class="logo">Hammer</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Catalog</button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'catalog' %}">Catalog</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Tasks</button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'to-do' %}">To-Do</a>
+                        <a href="{% url 'complete' %}">Complete</a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-container">
+                <div class="profile-icon">
+                    <img src="{% static 'images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
+                </div>
+                <div class="profile-dropdown">
+                    <a href="{% url 'profile_page' %}">Profile</a>
+                    <a href="{% url 'settings' %}">Settings</a>
+                    <a href="{% url 'login' %}">Logout</a>
+                </div>
+            </div>
+        </nav>
+        <h1>Catalog</h1>
+    </body>
+</html>
