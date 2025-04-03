@@ -7,7 +7,8 @@ from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
 from .models import LoginForm
 
-
+def home_page_view(request):
+	return render(request, "home_page.html")
 
 def catalog_page_view(request):
     return render(request, "catalog_page.html")
