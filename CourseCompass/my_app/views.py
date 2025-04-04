@@ -7,9 +7,6 @@ from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
 from .models import LoginForm
 
-#test
-def test_page(request):
-    return render(request, 'your_app/test.html')
 
 def home_page_view(request):
 	return render(request, "home_page.html")
