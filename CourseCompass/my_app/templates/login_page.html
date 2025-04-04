@@ -1,25 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<title>Login Page</title>
-		<link rel="stylesheet" href="../styles.css">
+		<link rel="stylesheet" href="{% static 'styles.css' %}">
+	</head>
+	<body class="body">
 		<div class="background"></div>
 		<nav class="navbar">
 			<div class="nav-left">
-				<a href="./home_page.html" class="logo">Hammer</a>
+				<!-- Use dynamic URL resolution if you have a named URL for home -->
+				<a href="{% url 'home' %}" class="logo">Hammer</a>
 			</div>
 			<div class="profile-container">
-				<div class="profile-icon"><img src="../images/profile_image.jpg" alt="Profile" style="width:60px;height:60px;"></div>
+				<div class="profile-icon">
+					<img src="{% static 'images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
+				</div>
 				<div class="profile-dropdown">
-					<a href="./profile_page.html">Profile</a>
-					<a href="./settings_page.html">Settings</a>
+					<a href="{% url 'profile_page' %}">Profile</a>
+					<a href="{% url 'settings' %}">Settings</a>
 					<a href="#">Logout</a>
 				</div>
 			</div>
 		</nav>
-	</head>
-	<body class="body">
+
+		<!-- Inline CSS is not ideal; consider moving this to your CSS file -->
 		<style>
 			/* Center the form element */
 			form {
@@ -28,34 +34,34 @@
 			  left: 50%;
 			  transform: translate(-50%, -50%);
 			  background-color: #5c5c5c;
-			  border:5px solid #5c5c5c;
+			  border: 5px solid #5c5c5c;
 			  width: 400px;
 			  height: 250px;
 			}
-		  </style>
-	    <form>
+			.login label {
+				color: white;
+				display: inline-block;
+			}
+		</style>
+
+		<form method="post">
+            {% csrf_token %}
 		    <h1 style="color: white;">Login</h1>
 			<br>
 			<div class="login">
-				<style>
-					label {
-						color: white;
-						display: inline-block;
-					}
-				</style>
-				<label><b>        Email:</b></label>
-				<input type="email" required>
+				<label><b>Email:</b></label>
+				<input type="email" name="email" required>
 				<br>
 				<label><b>Password:</b></label>
-				<input type="password" required>
+				<input type="password" name="password" required>
 				<br>
 				<label>
-					<input type="checkbox"> Remember Me
+					<input type="checkbox" name="remember"> Remember Me
 				</label>
 				<br>
 				<br>
 				<button type="submit">Login</button>
 			</div>
 		</form>
-    </body>
+	</body>
 </html>

@@ -8,25 +8,23 @@ from django.http import JsonResponse
 from .models import LoginForm
 
 def home_page_view(request):
-	return render(request, "templates/home_page.html")
+	return render(request, "home_page.html")
 
 def catalog_page_view(request):
-	return render(request, "templates/catelog_page.html")
+    return render(request, "catalog_page.html")
 
 def complete_view(request):
-	return render(request, "templates/complete.html")
+	return render(request, "complete.html")
 
 def profile_page_view(request):
-	return render(request, "templates/profile_page.html")
+	return render(request, "profile_page.html")
 
 def settings_page_view(request):
-	return render(request, "templates/settings_page.html")
+	return render(request, "settings_page.html")
 
 def to_do_view(request):
-	return render(request, "templates/to-do.html")
+	return render(request, "to-do.html")
 
-
-# Create your views here.
 def login_view(request):
     if request.method == "POST":
         form = LoginForm(data=request.POST)
@@ -41,4 +39,4 @@ def login_view(request):
             return JsonResponse({'success': False, 'message': 'Form is invalid'}, status=400)
     
     form = LoginForm()
-    return render(request, "templates/login.html", {"form": form})
+    return render(request, "login_page.html")
