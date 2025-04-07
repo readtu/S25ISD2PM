@@ -6,17 +6,12 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
-    border: 2px solid #5c5c5c;
+    background-color: #5c5c5c;
+    border:5px solid #5c5c5c;
     width: 400px;
     height: 250px;
-    color: #5c5c5c;
-    text-align: left;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 10px;
-    line-height: 2;
+
+   
 }
 
 .logout-container {
