@@ -1,72 +1,35 @@
-
-
 body {
     background-color: #9cbea6;
-    margin: 0;
-    font-family: Arial, sans-serif;
 }
-
-/* Card container similar to login form */
 .profile-card {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #5c5c5c;
-    border: 5px solid #5c5c5c;
+    border:5px solid #5c5c5c;
     width: 400px;
-    height: auto;
-    padding: 30px;
-    border-radius: 10px;
-    color: white;
-    text-align: left;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    line-height: 1.8;
+    height: 250px;
+
+   
 }
 
-/* Styled headings to match login look */
-.profile-card h1,
-.profile-card h2 {
-    color: white;
-    margin-bottom: 20px;
-}
-
-/* For displaying profile fields */
-.profile-field {
-    margin-bottom: 10px;
-}
-
-/* Optional: Buttons inside profile */
-.profile-button {
-    padding: 10px 25px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 2px solid black;
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.profile-button:hover {
-    background-color: #e6e6e6;
-}
-
-/* Logout button to match login button style */
 .logout-container {
+    position: absolute;
+    top: calc(50% + 150px); /* Adjust position below the profile card */
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    margin-top: 30px;
 }
 
 .logout-button {
-    padding: 10px 25px;
-    font-size: 16px;
+    display: inline-block;
     background-color: #d9534f;
     color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 200px;
+    border-radius: 5px;
 }
 
 .logout-button:hover {
