@@ -6,12 +6,14 @@
         <!-- Use the static tag to correctly load your CSS -->
         <link rel="stylesheet" href="{% static 'my_app/css/styles.css' %}">
         <title>Catalog - Hammer</title>
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
     </head>
     <body>
         <div class="background"></div>
         <nav class="navbar">
             <div class="nav-left">
-                <!-- Use URL reversing if you have named URL patterns in your urls.py -->
+                <!-- Using the URL name defined in your urls.py -->
                 <a href="{% url 'home' %}" class="logo">Hammer</a>
                 <div class="dropdown">
                     <button class="dropbtn">Catalog</button>
@@ -29,7 +31,7 @@
             </div>
             <div class="profile-container">
                 <div class="profile-icon">
-                    <img src="{% static 'images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
+                    <img src="{% static 'my_app/images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
                 </div>
                 <div class="profile-dropdown">
                     <a href="{% url 'profile_page' %}">Profile</a>
@@ -76,57 +78,6 @@
     h1, h2 {
         text-align: center;
         color: #333;
-    }
-    
-    /* Navbar Styling */
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #333;
-        padding: 10px 20px;
-        color: white;
-    }
-    
-    .nav-left a, .profile-dropdown a {
-        color: white;
-        text-decoration: none;
-        padding: 10px;
-    }
-    
-    .nav-left .dropdown, .profile-container {
-        position: relative;
-    }
-    
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #333;
-        min-width: 160px;
-        z-index: 1;
-    }
-    
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-    
-    .dropbtn {
-        background-color: #333;
-        color: white;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-    }
-    
-    /* Profile Container */
-    .profile-container {
-        display: flex;
-        align-items: center;
-    }
-    
-    .profile-icon img {
-        border-radius: 50%;
-        margin-right: 10px;
     }
     
     /* Catalog Container */
