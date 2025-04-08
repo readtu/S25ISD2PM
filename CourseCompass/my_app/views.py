@@ -30,14 +30,16 @@ def login_view(request):
     if request.method == "POST":
         form = LoginForm(data=request.POST)
         if form.is_valid():
-            user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
+            user = authenticate(
+                  username=form.cleaned_data['username'], 
+                  password=form.cleaned_data['password']
+                  )
             if user:
                 login(request, user)
-                return JsonResponse({'success': True, 'message': 'Login successful!'}, status=200)
+                return redirect('home')
             else:
-                return JsonResponse({'success': False, 'message': 'Invalid credentials'}, status=400)
+                return render(request, "login.html", {"error": "Invalid credentials"})
         else:
-            return JsonResponse({'success': False, 'message': 'Form is invalid'}, status=400)
-    
-    form = LoginForm()
+            return render(request, "login.html", {"error": "Invalid form"})
+            
     return render(request, "login_page.html")

@@ -1,10 +1,10 @@
 function validateForm() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    //var errorMessage = 'Please enter your username and password.';
+    var errorMessage = 'Please enter your username and password.';
 
     var fakeUser = {
-        username: "testuser",
+        username: "test@user",
         password: "test123"
     };
 
@@ -29,7 +29,7 @@ function validateForm() {
 
     if (username === fakeUser.username && password === fakeUser.password) {
         alert("Login successful! Redirecting...");
-        window.location.href = "../home_page.html"; // Redirect to the homepage
+        window.location.href = "{% url 'home' %}"; // Redirect to the homepage
         return true; // Prevent actual form submission for now
     } else {
         alert("Invalid username or password.");
