@@ -13,7 +13,6 @@
         <div class="background"></div>
         <nav class="navbar">
             <div class="nav-left">
-                <!-- Using the URL name defined in your urls.py -->
                 <a href="{% url 'home' %}" class="logo">Hammer</a>
                 <div class="dropdown">
                     <button class="dropbtn">Catalog</button>
@@ -41,25 +40,97 @@
             </div>
         </nav>
         <h1>Catalog</h1>
-        <h2>Filter options: Day, Week, Month, Semester, Time</h2>
-
+        <h2>Filter options:</h2>
+        <div class="filter">
+          <label for="day-filter">Day:</label>
+          <select id="day-filter" name="day">
+            <option value="">Select a day</option>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+          </select>
+        
+          <label for="professor-filter">Professor:</label>
+          <select id="professor-filter" name="professor">
+            <option value="">Select a professor</option>
+            <option value="Art White">Art White</option>
+            <option value="Eggleton">Eggleton</option>
+            <option value="Doug Reed">Doug Reed</option>
+          </select>
+        
+          <label for="month-filter">Month:</label>
+          <select id="month-filter" name="month">
+            <option value="">Select a month</option>
+            <option value="january">January</option>
+            <option value="february">February</option>
+            <option value="march">March</option>
+          </select>
+        
+          <label for="term-filter">Term:</label>
+          <select id="term-filter" name="term">
+            <option value="">Select a term</option>
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="fall">Fall</option>
+            <option value="J-Term">J-Term</option>
+            <option value="online">Online</option>
+          </select>
+        
+          <label for="time-filter">Time:</label>
+          <select id="time-filter" name="time">
+            <option value="">Select a time</option>
+            <option value="morning">8:00</option>
+            <option value="afternoon">8:30</option>
+            <option value="evening">9:00</option>
+          </select>
+            <button id="reset-filters" style="margin-top: 10px;">Reset Filters</button>
+          </div>
+          
+        
         <div class="catalog-container">
-            <div class="course-card">
+            <div class="course-card" 
+                 data-day="monday" 
+                 data-professor="Art White" 
+                 data-month="january" 
+                 data-term="spring" 
+                 data-time="morning">
                 <h3>COS 120: Introduction to Computer Science</h3>
                 <p><strong>Location:</strong> Euler, 2nd Floor</p>
-                <p><strong>Instructor:</strong> Professor While</p>
+                <p><strong>Instructor:</strong> Art White</p>
             </div>
-            
-            <div class="course-card">
+        
+            <div class="course-card" 
+                 data-day="tuesday" 
+                 data-professor="Eggleton" 
+                 data-month="february" 
+                 data-term="fall" 
+                 data-time="afternoon">
                 <h3>MAT 101: Introduction to Mathematics</h3>
                 <p><strong>Location:</strong> Euler, 3rd Floor</p>
                 <p><strong>Instructor:</strong> Dr. Eggleton</p>
             </div>
-            
-            <div class="course-card">
+        
+            <div class="course-card" 
+                 data-day="wednesday" 
+                 data-professor="Doug Reed" 
+                 data-month="march" 
+                 data-term="summer" 
+                 data-time="evening">
                 <h3>ENG 202: English Literature</h3>
                 <p><strong>Location:</strong> Reede, 1st Floor</p>
                 <p><strong>Instructor:</strong> Professor Reed</p>
+            </div>
+            <div class="course-card" 
+                 data-day="tuesday" 
+                 data-professor="Art White" 
+                 data-month="march" 
+                 data-term="spring" 
+                 data-time="afternoon">
+                <h3>COS 121: Introduction to Computer Science</h3>
+                <p><strong>Location:</strong> Euler, 2nd Floor</p>
+                <p><strong>Instructor:</strong> Art White</p>
             </div>
         </div>
     </body>
@@ -67,7 +138,6 @@
 
 
 <style>
-    /* General Body and Text Styling */
     body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f9;
@@ -80,7 +150,6 @@
         color: #333;
     }
     
-    /* Catalog Container */
     .catalog-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -105,4 +174,50 @@
         color: #555;
     }
     
-    </style>
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const filters = {
+            day: document.getElementById("day-filter"),
+            professor: document.getElementById("professor-filter"),
+            month: document.getElementById("month-filter"),
+            term: document.getElementById("term-filter"),
+            time: document.getElementById("time-filter"),
+        };
+    
+        const courseCards = document.querySelectorAll(".course-card");
+        const resetButton = document.getElementById("reset-filters");
+    
+        function applyFilters() {
+            courseCards.forEach(card => {
+                let show = true;
+    
+                for (const key in filters) {
+                    const selected = filters[key].value.trim().toLowerCase();
+                    const value = card.dataset[key]?.trim().toLowerCase();
+    
+                    if (selected && selected !== value) {
+                        show = false;
+                        break;
+                    }
+                }
+    
+                card.style.display = show ? "block" : "none";
+            });
+        }
+    
+        Object.values(filters).forEach(select => {
+            select.addEventListener("change", applyFilters);
+        });
+    
+        resetButton.addEventListener("click", () => {
+            Object.values(filters).forEach(select => select.value = "");
+            applyFilters();
+        });
+    
+        applyFilters();
+    });
+    </script>
+    
+    
