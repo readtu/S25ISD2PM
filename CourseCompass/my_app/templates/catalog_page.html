@@ -85,7 +85,9 @@
             <option value="afternoon">8:30</option>
             <option value="evening">9:00</option>
           </select>
-        </div>
+            <button id="reset-filters" style="margin-top: 10px;">Reset Filters</button>
+          </div>
+          
         
         <div class="catalog-container">
             <div class="course-card" 
@@ -165,39 +167,51 @@
 </style>
 
 <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const filters = {
-                day: document.getElementById("day-filter"),
-                professor: document.getElementById("professor-filter"),
-                month: document.getElementById("month-filter"),
-                term: document.getElementById("term-filter"),
-                time: document.getElementById("time-filter"),
-            };
-        
-            const courseCards = document.querySelectorAll(".course-card");
-        
-            function applyFilters() {
-                courseCards.forEach(card => {
-                    let visible = true;
-        
-                    for (const key in filters) {
-                        const selectedValue = filters[key].value.toLowerCase();
-                        const cardValue = card.dataset[key]?.toLowerCase();
-        
-                        if (selectedValue && selectedValue !== cardValue) {
-                            visible = false;
-                            break;
-                        }
+    document.addEventListener("DOMContentLoaded", () => {
+        const filters = {
+            day: document.getElementById("day-filter"),
+            professor: document.getElementById("professor-filter"),
+            month: document.getElementById("month-filter"),
+            term: document.getElementById("term-filter"),
+            time: document.getElementById("time-filter"),
+        };
+    
+        const courseCards = document.querySelectorAll(".course-card");
+        const resetButton = document.getElementById("reset-filters");
+    
+        function applyFilters() {
+            courseCards.forEach(card => {
+                let show = true;
+    
+                for (const key in filters) {
+                    const selected = filters[key].value.trim().toLowerCase();
+                    const value = card.dataset[key]?.trim().toLowerCase();
+    
+                    // If a filter is selected and it doesn't match the card, hide it
+                    if (selected && selected !== value) {
+                        show = false;
+                        break;
                     }
-        
-                    card.style.display = visible ? "block" : "none";
-                });
-            }
-        
-            // Add event listeners
-            for (const key in filters) {
-                filters[key].addEventListener("change", applyFilters);
-            }
+                }
+    
+                card.style.display = show ? "block" : "none";
+            });
+        }
+    
+        // Listen to all filter dropdowns
+        Object.values(filters).forEach(select => {
+            select.addEventListener("change", applyFilters);
         });
-</script>
-        
+    
+        // Reset filters and show all cards
+        resetButton.addEventListener("click", () => {
+            Object.values(filters).forEach(select => select.value = "");
+            applyFilters();
+        });
+    
+        // Initial filter run (optional)
+        applyFilters();
+    });
+    </script>
+    
+    
