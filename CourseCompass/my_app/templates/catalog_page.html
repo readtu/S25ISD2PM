@@ -98,7 +98,7 @@
                  data-time="morning">
                 <h3>COS 120: Introduction to Computer Science</h3>
                 <p><strong>Location:</strong> Euler, 2nd Floor</p>
-                <p><strong>Instructor:</strong> Professor White</p>
+                <p><strong>Instructor:</strong> Art White</p>
             </div>
         
             <div class="course-card" 
@@ -121,6 +121,16 @@
                 <h3>ENG 202: English Literature</h3>
                 <p><strong>Location:</strong> Reede, 1st Floor</p>
                 <p><strong>Instructor:</strong> Professor Reed</p>
+            </div>
+            <div class="course-card" 
+                 data-day="tuesday" 
+                 data-professor="Art White" 
+                 data-month="march" 
+                 data-term="spring" 
+                 data-time="afternoon">
+                <h3>COS 121: Introduction to Computer Science</h3>
+                <p><strong>Location:</strong> Euler, 2nd Floor</p>
+                <p><strong>Instructor:</strong> Art White</p>
             </div>
         </div>
     </body>
@@ -187,7 +197,6 @@
                     const selected = filters[key].value.trim().toLowerCase();
                     const value = card.dataset[key]?.trim().toLowerCase();
     
-                    // If a filter is selected and it doesn't match the card, hide it
                     if (selected && selected !== value) {
                         show = false;
                         break;
@@ -198,18 +207,15 @@
             });
         }
     
-        // Listen to all filter dropdowns
         Object.values(filters).forEach(select => {
             select.addEventListener("change", applyFilters);
         });
     
-        // Reset filters and show all cards
         resetButton.addEventListener("click", () => {
             Object.values(filters).forEach(select => select.value = "");
             applyFilters();
         });
     
-        // Initial filter run (optional)
         applyFilters();
     });
     </script>
