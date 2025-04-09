@@ -15,10 +15,9 @@
     line-height: 1.8;
 }
 
-/* Logout button matching login button style */
 .logout-container {
     position: absolute;
-    top: calc(50% + 180px); /* Just below the card */
+    top: calc(50% + 180px);
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
