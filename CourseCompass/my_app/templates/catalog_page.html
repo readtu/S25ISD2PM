@@ -3,7 +3,6 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <!-- Use the static tag to correctly load your CSS -->
         <link rel="stylesheet" href="{% static 'my_app/css/styles.css' %}">
         <title>Catalog - Hammer</title>
 
@@ -39,6 +38,7 @@
                 </div>
             </div>
         </nav>
+        <div class = "centered">
         <h1>Catalog</h1>
         <h2>Filter options:</h2>
         <div class="filter">
@@ -87,7 +87,7 @@
           </select>
             <button id="reset-filters" style="margin-top: 10px;">Reset Filters</button>
           </div>
-          
+        </div>
         
         <div class="catalog-container">
             <div class="course-card" 
@@ -172,6 +172,10 @@
     .course-card p {
         font-size: 1rem;
         color: #555;
+    }
+
+    .centered{
+        text-align: center;
     }
     
 </style>
