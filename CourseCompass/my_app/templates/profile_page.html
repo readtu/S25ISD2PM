@@ -11,17 +11,8 @@
 			<div class="nav-left">
 				<!-- Use dynamic URLs if you have named URL patterns -->
 				<a href="{% url 'home' %}" class="logo">Hammer</a>
+				<a href="{% url 'catalog' %}">Catalog</a>
 			</div>
-			<div class="profile-container">
-                <div class="profile-icon">
-                    <img src="{% static 'my_app/images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
-                </div>
-                <div class="profile-dropdown">
-                    <a href="{% url 'profile_page' %}">Profile</a>
-                    <a href="{% url 'settings' %}">Settings</a>
-                    <a href="{% url 'login' %}">Logout</a>
-                </div>
-            </div>
 		</nav>
 		<div class="profile-card">
 			<h2>{{ user.username }}</h2>
