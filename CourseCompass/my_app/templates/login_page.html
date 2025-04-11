@@ -5,7 +5,10 @@
 		<meta charset="UTF-8">
 		<title>Login Page</title>
 		<link rel="stylesheet" href="{% static 'my_app/css/styles.css' %}">
-		<!-- <link rel="stylesheet" href="{% static 'my_app/css/login_page.css' %}"> -->
+<<<<<<< HEAD
+		<link rel="stylesheet" href="{% static 'my_app/css/login_page.css' %}">
+=======
+>>>>>>> a999d7c6fb5acdf14721c636e493141cec1a6930
 	</head>
 	<body class="body">
 		<div class="background"></div>
@@ -16,7 +19,7 @@
 			</div>
 			<div class="profile-container">
 				<div class="profile-icon">
-					<img src="{% static 'images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
+					<img src="{% static 'my_app/images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
 				</div>
 				<div class="profile-dropdown">
 					<a href="{% url 'login' %}">login</a>
@@ -24,24 +27,7 @@
 			</div>
 		</nav>
 
-		<!-- Inline CSS is not ideal; consider moving this to your CSS file -->
-		<style>
-			/* Center the form element */
-			form {
-			  position: absolute;
-			  top: 50%;
-			  left: 50%;
-			  transform: translate(-50%, -50%);
-			  background-color: #5c5c5c;
-			  border: 5px solid #5c5c5c;
-			  width: 400px;
-			  height: 250px;
-			}
-			.login label {
-				color: white;
-				display: inline-block;
-			}
-		</style>
+
 
 		<form method="POST" action="{% url 'home' %}">
             {% csrf_token %}

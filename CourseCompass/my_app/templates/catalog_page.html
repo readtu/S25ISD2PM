@@ -3,7 +3,6 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <!-- Use the static tag to correctly load your CSS -->
         <link rel="stylesheet" href="{% static 'my_app/css/styles.css' %}">
         <title>Catalog - Hammer</title>
 
@@ -13,6 +12,7 @@
         <div class="background"></div>
         <nav class="navbar">
             <div class="nav-left">
+                <!-- Using the URL name defined in your urls.py -->
                 <a href="{% url 'home' %}" class="logo">Hammer</a>
                 <div class="dropdown">
                     <button class="dropbtn">Catalog</button>
@@ -39,6 +39,7 @@
                 </div>
             </div>
         </nav>
+        <div class = "centered">
         <h1>Catalog</h1>
         <h2>Filter options:</h2>
         <div class="filter">
@@ -90,47 +91,22 @@
           
         
         <div class="catalog-container">
-            <div class="course-card" 
-                 data-day="monday" 
-                 data-professor="Art White" 
-                 data-month="january" 
-                 data-term="spring" 
-                 data-time="morning">
+            <div class="course-card">
                 <h3>COS 120: Introduction to Computer Science</h3>
                 <p><strong>Location:</strong> Euler, 2nd Floor</p>
-                <p><strong>Instructor:</strong> Art White</p>
+                <p><strong>Instructor:</strong> Professor While</p>
             </div>
-        
-            <div class="course-card" 
-                 data-day="tuesday" 
-                 data-professor="Eggleton" 
-                 data-month="february" 
-                 data-term="fall" 
-                 data-time="afternoon">
+            
+            <div class="course-card">
                 <h3>MAT 101: Introduction to Mathematics</h3>
                 <p><strong>Location:</strong> Euler, 3rd Floor</p>
                 <p><strong>Instructor:</strong> Dr. Eggleton</p>
             </div>
-        
-            <div class="course-card" 
-                 data-day="wednesday" 
-                 data-professor="Doug Reed" 
-                 data-month="march" 
-                 data-term="summer" 
-                 data-time="evening">
+            
+            <div class="course-card">
                 <h3>ENG 202: English Literature</h3>
                 <p><strong>Location:</strong> Reede, 1st Floor</p>
                 <p><strong>Instructor:</strong> Professor Reed</p>
-            </div>
-            <div class="course-card" 
-                 data-day="tuesday" 
-                 data-professor="Art White" 
-                 data-month="march" 
-                 data-term="spring" 
-                 data-time="afternoon">
-                <h3>COS 121: Introduction to Computer Science</h3>
-                <p><strong>Location:</strong> Euler, 2nd Floor</p>
-                <p><strong>Instructor:</strong> Art White</p>
             </div>
         </div>
     </body>
@@ -138,6 +114,7 @@
 
 
 <style>
+    /* General Body and Text Styling */
     body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f9;
@@ -150,6 +127,7 @@
         color: #333;
     }
     
+    /* Catalog Container */
     .catalog-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -173,51 +151,9 @@
         font-size: 1rem;
         color: #555;
     }
-    
-</style>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const filters = {
-            day: document.getElementById("day-filter"),
-            professor: document.getElementById("professor-filter"),
-            month: document.getElementById("month-filter"),
-            term: document.getElementById("term-filter"),
-            time: document.getElementById("time-filter"),
-        };
+    .centered{
+        text-align: center;
+    }
     
-        const courseCards = document.querySelectorAll(".course-card");
-        const resetButton = document.getElementById("reset-filters");
-    
-        function applyFilters() {
-            courseCards.forEach(card => {
-                let show = true;
-    
-                for (const key in filters) {
-                    const selected = filters[key].value.trim().toLowerCase();
-                    const value = card.dataset[key]?.trim().toLowerCase();
-    
-                    if (selected && selected !== value) {
-                        show = false;
-                        break;
-                    }
-                }
-    
-                card.style.display = show ? "block" : "none";
-            });
-        }
-    
-        Object.values(filters).forEach(select => {
-            select.addEventListener("change", applyFilters);
-        });
-    
-        resetButton.addEventListener("click", () => {
-            Object.values(filters).forEach(select => select.value = "");
-            applyFilters();
-        });
-    
-        applyFilters();
-    });
-    </script>
-    
-    
+    </style>
