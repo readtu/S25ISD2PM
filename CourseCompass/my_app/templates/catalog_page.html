@@ -3,7 +3,6 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <!-- Use the static tag to correctly load your CSS -->
         <link rel="stylesheet" href="{% static 'my_app/css/styles.css' %}">
         <title>Catalog - Hammer</title>
 
@@ -40,9 +39,57 @@
                 </div>
             </div>
         </nav>
+        <div class = "centered">
         <h1>Catalog</h1>
-        <h2>Filter options: Day, Week, Month, Semester, Time</h2>
-
+        <h2>Filter options:</h2>
+        <div class="filter">
+          <label for="day-filter">Day:</label>
+          <select id="day-filter" name="day">
+            <option value="">Select a day</option>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+          </select>
+        
+          <label for="professor-filter">Professor:</label>
+          <select id="professor-filter" name="professor">
+            <option value="">Select a professor</option>
+            <option value="Art White">Art White</option>
+            <option value="Eggleton">Eggleton</option>
+            <option value="Doug Reed">Doug Reed</option>
+          </select>
+        
+          <label for="month-filter">Month:</label>
+          <select id="month-filter" name="month">
+            <option value="">Select a month</option>
+            <option value="january">January</option>
+            <option value="february">February</option>
+            <option value="march">March</option>
+          </select>
+        
+          <label for="term-filter">Term:</label>
+          <select id="term-filter" name="term">
+            <option value="">Select a term</option>
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="fall">Fall</option>
+            <option value="J-Term">J-Term</option>
+            <option value="online">Online</option>
+          </select>
+        
+          <label for="time-filter">Time:</label>
+          <select id="time-filter" name="time">
+            <option value="">Select a time</option>
+            <option value="morning">8:00</option>
+            <option value="afternoon">8:30</option>
+            <option value="evening">9:00</option>
+          </select>
+            <button id="reset-filters" style="margin-top: 10px;">Reset Filters</button>
+          </div>
+          
+        
         <div class="catalog-container">
             <div class="course-card">
                 <h3>COS 120: Introduction to Computer Science</h3>
@@ -103,6 +150,10 @@
     .course-card p {
         font-size: 1rem;
         color: #555;
+    }
+
+    .centered{
+        text-align: center;
     }
     
     </style>
