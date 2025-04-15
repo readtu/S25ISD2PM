@@ -1,42 +1,45 @@
 body {
     background-color: #9cbea6;
-}
-.profile-card {
+  }
+  
+  .profile-card {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: white;
-    border: 2px solid #5c5c5c;
+    background-color: #5c5c5c; 
+    border: 5px solid #5c5c5c;
     width: 400px;
     height: 250px;
-    color: #5c5c5c;
+    color: white;
     text-align: left;
     align-items: center;
     justify-content: center;
     padding: 20px;
     border-radius: 10px;
     line-height: 2;
-}
-
-.logout-container {
+  }
+  
+  .logout-container {
     position: absolute;
-    top: calc(50% + 150px); /* Adjust position below the profile card */
+    top: calc(50% + 200px);
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-}
-
-.logout-button {
-    display: flex;
+  }
+  
+  .logout-button {
+    display: inline-block;
     background-color: #d9534f;
     color: white;
     text-decoration: none;
     padding: 10px 20px;
-    font-size: 200px;
+    font-size: 16px;
     border-radius: 5px;
-}
-
-.logout-button:hover {
+    border: none;
+    cursor: pointer;
+  }
+  
+  .logout-button:hover {
     background-color: #c9302c;
-}
+  }
