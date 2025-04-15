@@ -34,7 +34,7 @@ body {
     color: white;
     text-decoration: none;
     padding: 10px 20px;
-    font-size: 16px; /* changed from 200px to reasonable size */
+    font-size: 16px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
