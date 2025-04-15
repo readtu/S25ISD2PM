@@ -28,7 +28,7 @@ body {
 }
 
 .logout-button {
-    display: inline-block;
+    display: flex;
     background-color: #d9534f;
     color: white;
     text-decoration: none;
