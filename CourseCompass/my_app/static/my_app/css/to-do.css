@@ -39,14 +39,8 @@ header {
   border-radius: 5px;
 }
 
-.department-filter {
-  background: #fff;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
-  align-items:center;
+.filter {
+  text-align: center;
 }
 
 button {
