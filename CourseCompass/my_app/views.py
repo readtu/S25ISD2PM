@@ -53,8 +53,8 @@ def receive_ichair_data(request):
             data = json.loads(request.body)
             print("Received iChair data:", data)
             print("📥 Received data from iChair:", data)
-            print("Course:", data.get("course"))
-            print("Instructor:", data.get("instructor"))
+            print("Course:", data.get("term_code"))
+            print("Instructor:", data.get("course_data"))
             # TODO: Save to DB, or process however you want
             return JsonResponse({"status": "success"})
         except json.JSONDecodeError:
