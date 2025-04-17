@@ -6,6 +6,8 @@ from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
 from .models import LoginForm
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 
 def home_page_view(request):
@@ -43,3 +45,15 @@ def login_view(request):
             return render(request, "login.html", {"error": "Invalid form"})
             
     return render(request, "login_page.html")
+
+@csrf_exempt
+def receive_ichair_data(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            print("Received iChair data:", data)
+            # TODO: Save to DB, or process however you want
+            return JsonResponse({"status": "success"})
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Invalid JSON"}, status=400)
+    return JsonResponse({"error": "Only POST allowed"}, status=405)

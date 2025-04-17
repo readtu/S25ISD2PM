@@ -3,6 +3,7 @@ from django.urls import path
 from django.urls import include
 from . import views
 from .views import login_view
+from .views import receive_json
 
 urlpatterns = [
     path("", views.home_page_view, name="home"),
@@ -13,4 +14,5 @@ urlpatterns = [
     path("settings_page.html/", views.settings_page_view, name="settings"),
     path("to-do.html/", views.to_do_view, name="to-do"),
     path("login_page.html/", views.login_view, name="login"),
+    path("api/receive-json/", receive_json, name="receive-json"),
 ]
