@@ -14,5 +14,5 @@ urlpatterns = [
     path("settings_page.html/", views.settings_page_view, name="settings"),
     path("to-do.html/", views.to_do_view, name="to-do"),
     path("login_page.html/", views.login_view, name="login"),
-    path("api/receive-json/", receive_json, name="receive-json"),
+    path("api/receive_ichair_data/", receive_json, name="receive_ichair_data"),
 ]
