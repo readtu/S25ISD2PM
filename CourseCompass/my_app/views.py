@@ -47,7 +47,7 @@ def login_view(request):
     return render(request, "login_page.html")
 
 @csrf_exempt
-def receive_ichair_data(request):
+def receive_json(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
