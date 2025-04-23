@@ -19,12 +19,18 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropbtn">Tasks</button>
-                    <div class="dropdown-content">
-                        <a href="{% url 'to-do' %}">To-Do</a>
-                        <a href="{% url 'complete' %}">Complete</a>
-                    </div>
-                </div>
+					<button class="dropbtn">Approved Sections</button>
+					<div class="dropdown-content">
+						<a href="{% url 'catalog' %}">Approved Sections</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Tasks</button>
+					<div class="dropdown-content">
+						<a href="{% url 'to-do' %}">To-Do</a>
+						<a href="{% url 'complete' %}">Pending</a>
+					</div>
+				</div>
             </div>
             <div class="profile-container">
                 <div class="profile-icon">
