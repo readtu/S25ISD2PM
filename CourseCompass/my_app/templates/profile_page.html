@@ -12,7 +12,21 @@
 			<div class="nav-left">
 				<!-- Use dynamic URLs if you have named URL patterns -->
 				<a href="{% url 'home' %}" class="logo">Hammer</a>
+				div class="dropdown">
+					<button class="dropbtn">Approved Sections</button>
+					<div class="dropdown-content">
+						<a href="{% url 'catalog' %}">Approved Sections</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<button class="dropbtn">Tasks</button>
+					<div class="dropdown-content">
+						<a href="{% url 'to-do' %}">To-Do</a>
+						<a href="{% url 'complete' %}">Pending</a>
+					</div>
+				</div>
 			</div>
+
 			<div class="profile-container">
 				<div class="profile-icon">
 					<img src="{% static 'my_app/images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
