@@ -18,14 +18,14 @@
                 <div class="dropdown">
                     <button class="dropbtn">Catalog</button>
                     <div class="dropdown-content">
-                        <a href="{% url 'catalog' %}">Approved Sections</a>
+                        <a href="{% url 'catalog' %}">Catalog</a>
                     </div>
                 </div>
                 <div class="dropdown">
                     <button class="dropbtn">Tasks</button>
                     <div class="dropdown-content">
                         <a href="{% url 'to-do' %}">To-Do</a>
-                        <a href="{% url 'complete' %}">Pending</a>
+                        <a href="{% url 'pending' %}">Pending</a>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
             </div>
         </nav>
         <div class = "centered">
-        <h1>Catalog</h1>
+        <h1>Approved Sections</h1>
         <h2>Filter options:</h2>
         <div class="filter">
           <label for="day-filter">Day:</label>
