@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['https://hammer.cse.taylor.edu']
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
 	'CourseCompass.apps.CourseCompassConfig',
     'django.contrib.admin',
     'django.contrib.auth',
