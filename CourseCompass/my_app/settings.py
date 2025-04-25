@@ -33,6 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['https://hammer.cse.taylor.edu']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,7 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'my_app',
+    'corsheaders',
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,6 +57,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://hammer.cse.taylor.edu",
 ]
 
 ROOT_URLCONF = 'CourseCompass.urls'
