@@ -17,7 +17,7 @@ def catalog_page_view(request):
     return render(request, "catalog_page.html")
 
 def complete_view(request):
-	return render(request, "complete.html")
+	return render(request, "pending.html")
 
 def profile_page_view(request):
 	return render(request, "profile_page.html")
