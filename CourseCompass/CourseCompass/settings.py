@@ -13,13 +13,11 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'CourseCompass' / 'staticfiles',
+    BASE_DIR / 'CourseCompass' / 'staticfiles'
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles_collected'
-
 
 
 # Quick-start development settings - unsuitable for production
