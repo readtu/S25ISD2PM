@@ -30,11 +30,9 @@ SECRET_KEY = 'django-insecure-ya=t4y*v13m2kb45hg53$9wm^rj$+ck_ir&ijg&3gll2e%ktx6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://hammer.cse.taylor.edu']
-
+ALLOWED_HOSTS = ['hammer.cse.taylor.edu', 'localhost', '127.0.0.1']
 
 # Application definition
-
 INSTALLED_APPS = [
     'corsheaders',
 	'CourseCompass.apps.CourseCompassConfig',
