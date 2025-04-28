@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static/css',
+    BASE_DIR / 'staticfiles',
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
