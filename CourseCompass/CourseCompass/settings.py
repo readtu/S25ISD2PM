@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATE_DIR = BASE_DIR / 'my_app' / 'templates'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'CourseCompass' / 'staticfiles'
