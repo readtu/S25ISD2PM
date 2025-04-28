@@ -17,9 +17,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'staticfiles',  # This should be where your `staticfiles/my_app` is located
+    BASE_DIR / 'CourseCompass' / 'staticfiles',
 ]
-STATIC_ROOT = BASE_DIR / "staticfiles"  # Ensure this points to the directory where collected files will go
+STATIC_ROOT = BASE_DIR / 'staticfiles_collected'
+
 
 
 
