@@ -159,5 +159,48 @@
         color: #fff;
         padding: 20px;
     }
-    
+    .content { display: none; margin-top: 10px; }
+    .item { margin: 5px 0; }
+    .hidden { display: none; }
+    .carrot {
+      cursor: pointer;
+      font-size: 20px;
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+    }
+    .carrot.open {
+      transform: rotate(90deg);
+    }
     </style>
+
+    <script>
+        const carrot = document.querySelector('.carrot');
+        const contentSections = document.querySelectorAll('.content');
+      
+        // Toggle display on carrot click
+        carrot.addEventListener('click', () => {
+          contentSections.forEach(section => {
+            section.style.display = section.style.display === 'none' || !section.style.display
+              ? 'block'
+              : 'none';
+          });
+          carrot.classList.toggle('open');
+        });
+      
+        // Filter functionality
+        const checkboxes = document.querySelectorAll('.filters input[type="checkbox"]');
+        const items = document.querySelectorAll('.items .item');
+      
+        checkboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', () => {
+            const selected = Array.from(checkboxes)
+                                  .filter(cb => cb.checked)
+                                  .map(cb => cb.value);
+            
+            items.forEach(item => {
+              const category = item.getAttribute('data-category');
+              item.classList.toggle('hidden', !selected.includes(category));
+            });
+          });
+        });
+      </script>
