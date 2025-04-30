@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{% static 'my_app/css/styles.css' %}">
-        <title> Banner Hammer</title>
+        <title>Hammer</title>
     </head>
     <body>
         <div class="background"></div>
@@ -12,6 +12,7 @@
             <div class="nav-left">
                 <!-- Using the URL name defined in your urls.py -->
                 <a href="{% url 'home' %}" class="logo">Hammer</a>
+                <img src="{% static 'my_app/images/hammerlogo.png' %}" alt="Profile" style="width:60px;height:60px;">
                 <div class="dropdown">
 					<button class="dropbtn">Approved Sections</button>
 					<div class="dropdown-content">

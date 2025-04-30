@@ -1,0 +1,87 @@
+[
+	{
+		"model": "my_app.ModelData",
+		"pk": 1,
+		"fields": {
+			"json_data": {
+				"academicPeriod": {
+					"category": {
+						"type": null,
+						"parent": {
+							"id": null
+						}
+					},
+					"code": null,
+					"detail": {
+						"id": "def99af6-db13-4490-aa32-204fbe83fdf6"
+					},
+					"endOn": null,
+					"guid": "def99af6-db13-4490-aa32-204fbe83fdf6",
+					"parentId": null,
+					"startOn": null,
+					"title": null,
+					"type": null
+				},
+				"billing": 4,
+				"censusDates": [
+					"1998-09-30"
+				],
+				"code": "02464",
+				"course": {
+					"id": "1f18abfc-b95f-4dd5-a903-fe52e56442e7"
+				},
+				"credits": [
+					{
+						"creditCategory": {
+							"creditType": "institution",
+							"detail": {
+								"id": "8369f555-a89e-492f-a9b4-a2f859b1416d"
+							}
+						},
+						"increment": 0,
+						"maximum": 4,
+						"measure": "hours",
+						"minimum": 4
+					}
+				],
+				"description": null,
+				"duration": null,
+				"endOn": "1998-12-17T00:00:00+00:00",
+				"gradeSchemes": null,
+				"guid": "5219deef-f449-4153-941f-38e5c1d4d9c6",
+				"instructionalEvents": null,
+				"instructionalPlatform": null,
+				"maxEnrollment": 1,
+				"number": "21",
+				"owningInstitutionUnits": [
+					{
+						"institutionUnit": {
+							"id": "187c8d10-4585-434e-988a-e7a8ad0afb4e"
+						},
+						"ownershipPercentage": 100
+					},
+					{
+						"institutionUnit": {
+							"id": "38b67881-6e67-40bf-a777-6b17b46dfc63"
+						},
+						"ownershipPercentage": 100
+					},
+					{
+						"institutionUnit": {
+							"id": "cde3fd5b-ca7e-4883-9637-e572c233f247"
+						},
+						"ownershipPercentage": 100
+					}
+				],
+				"reportingDetail": null,
+				"site": {
+					"id": "c01536e4-2e80-45cd-a270-55c0a6efd749"
+				},
+				"startOn": "1998-09-01T00:00:00+00:00",
+				"status": "open",
+				"title": "Directed Research"
+			}
+		}
+	}
+]
+
