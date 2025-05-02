@@ -146,6 +146,42 @@
         });
     });
 
+    const filters = {
+        day: document.getElementById('day-filter'),
+        professor: document.getElementById('professor-filter'),
+        building: document.getElementById('building'),
+        term: document.getElementById('term-filter'),
+        time: document.getElementById('time-filter'),
+    };
+
+    const courseCards = document.querySelectorAll('.course-card');
+
+    function applyFilters() {
+        courseCards.forEach(card => {
+            const details = card.querySelector('.course-details').textContent.toLowerCase();
+            const matches = 
+                (!filters.day.value || details.includes(filters.day.value.toLowerCase())) &&
+                (!filters.professor.value || details.includes(filters.professor.value.toLowerCase())) &&
+                (!filters.building.value || details.includes(filters.building.value.toLowerCase())) &&
+                (!filters.term.value || details.includes(filters.term.value.toLowerCase())) &&
+                (!filters.time.value || details.includes(filters.time.value.toLowerCase()));
+            card.style.display = matches ? 'block' : 'none';
+        });
+    }
+
+    Object.values(filters).forEach(select => {
+        select.addEventListener('change', applyFilters);
+    });
+
+    document.getElementById('reset-filters').addEventListener('click', () => {
+        Object.values(filters).forEach(select => {
+            select.selectedIndex = 0;
+        });
+        applyFilters();  // Reset filter results too
+    });
+
+    applyFilters();
+
     // Reset filters
     document.getElementById('reset-filters').addEventListener('click', () => {
         document.querySelectorAll('.filter select').forEach(select => {
