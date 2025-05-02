@@ -95,6 +95,14 @@
         <option value="9:00">9:00</option>
     </select>
 
+    <label for="building">Building:</label>
+    <select id="building">
+        <option value="">Select a building</option>
+        <option value="Euler">Euler</option>
+        <option value="Reede">Reede</option>
+    </select>
+
+
     <button id="reset-filters" style="margin-top: 10px;">Reset Filters</button>
 </div>
 
@@ -130,28 +138,29 @@
     toggleCarrot.addEventListener('click', () => {
         toggleCarrot.classList.toggle('open');
         contentSections.forEach(section => {
-            section.style.display = section.style.display === 'none' || !section.style.display
+            section.style.display = (section.style.display === 'none' || !section.style.display)
                 ? 'block'
                 : 'none';
         });
     });
 
-    // Toggle each course's detail visibility on h3 click
+    // Toggle course detail visibility on h3 click
     document.querySelectorAll('.course-card h3').forEach(header => {
         header.addEventListener('click', () => {
             const details = header.nextElementSibling;
             if (details) {
-                details.style.display = details.style.display === 'block' ? 'none' : 'block';
+                details.style.display = (details.style.display === 'block') ? 'none' : 'block';
             }
         });
     });
 
+    // Filters
     const filters = {
         day: document.getElementById('day-filter'),
         professor: document.getElementById('professor-filter'),
-        building: document.getElementById('building'),
         term: document.getElementById('term-filter'),
         time: document.getElementById('time-filter'),
+        month: document.getElementById('month-filter')
     };
 
     const courseCards = document.querySelectorAll('.course-card');
@@ -159,36 +168,39 @@
     function applyFilters() {
         courseCards.forEach(card => {
             const details = card.querySelector('.course-details').textContent.toLowerCase();
-            const matches = 
+
+            const matches =
                 (!filters.day.value || details.includes(filters.day.value.toLowerCase())) &&
                 (!filters.professor.value || details.includes(filters.professor.value.toLowerCase())) &&
-                (!filters.building.value || details.includes(filters.building.value.toLowerCase())) &&
                 (!filters.term.value || details.includes(filters.term.value.toLowerCase())) &&
-                (!filters.time.value || details.includes(filters.time.value.toLowerCase()));
+                (!filters.time.value || details.includes(filters.time.value.toLowerCase())) &&
+                (!filters.month.value || details.includes(filters.month.value.toLowerCase()));
+
             card.style.display = matches ? 'block' : 'none';
         });
     }
 
+    // Attach change event to each filter
     Object.values(filters).forEach(select => {
-        select.addEventListener('change', applyFilters);
+        if (select) {
+            select.addEventListener('change', applyFilters);
+        }
     });
 
+    // Reset filters and show all cards
     document.getElementById('reset-filters').addEventListener('click', () => {
         Object.values(filters).forEach(select => {
-            select.selectedIndex = 0;
+            if (select) {
+                select.selectedIndex = 0;
+            }
         });
-        applyFilters();  // Reset filter results too
+        applyFilters();
     });
 
+    // Initial application of filters
     applyFilters();
-
-    // Reset filters
-    document.getElementById('reset-filters').addEventListener('click', () => {
-        document.querySelectorAll('.filter select').forEach(select => {
-            select.selectedIndex = 0;
-        });
-    });
 </script>
+
 
 </body>
 </html>
