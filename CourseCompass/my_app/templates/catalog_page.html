@@ -2,205 +2,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hammer</title>
-    
-    <link rel="stylesheet" href="{% static 'my_app/css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'my_app/css/catalog_page.css' %}">     
+  <meta charset="UTF-8">
+  <title>Approved Sections - Hammer</title>
+  <link rel="stylesheet" href="{% static 'my_app/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'my_app/css/catalog_page.css' %}">
 </head>
 <body>
 
 <div class="background"></div>
 
 <nav class="navbar">
-    <div class="nav-left">
-        <a href="{% url 'home' %}" class="logo">Hammer</a>
+  <div class="nav-left">
+    <a href="{% url 'home' %}" class="logo">Hammer</a>
 
-        <div class="dropdown">
-            <button class="dropbtn">Approved Sections</button>
-            <div class="dropdown-content">
-                <a href="{% url 'catalog' %}">Approved Sections</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Tasks</button>
-            <div class="dropdown-content">
-                <a href="{% url 'to-do' %}">To-Do</a>
-                <a href="{% url 'pending' %}">Pending</a>
-            </div>
-        </div>
+    <div class="dropdown">
+      <button class="dropbtn">Approved Sections</button>
+      <div class="dropdown-content">
+        <a href="{% url 'catalog' %}">Approved Sections</a>
+      </div>
     </div>
 
-    <div class="profile-container">
-        <div class="profile-icon">
-            <img src="{% static 'my_app/images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
-        </div>
-        <div class="profile-dropdown">
-            <a href="{% url 'profile_page' %}">Profile</a>
-            <a href="{% url 'settings' %}">Settings</a>
-            <a href="{% url 'login' %}">Logout</a>
-        </div>
+    <div class="dropdown">
+      <button class="dropbtn">Tasks</button>
+      <div class="dropdown-content">
+        <a href="{% url 'to-do' %}">To-Do</a>
+        <a href="{% url 'pending' %}">Pending</a>
+      </div>
     </div>
+  </div>
+
+  <div class="profile-container">
+    <div class="profile-icon">
+      <img src="{% static 'my_app/images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
+    </div>
+    <div class="profile-dropdown">
+      <a href="{% url 'profile_page' %}">Profile</a>
+      <a href="{% url 'settings' %}">Settings</a>
+      <a href="{% url 'login' %}">Logout</a>
+    </div>
+  </div>
 </nav>
 
 <div class="centered">
-    <h1>
-        APPROVED SECTIONS
-        <span class="carrot" id="toggle-carrot">&#9654;</span>
-    </h1>
+  <h1>APPROVED SECTIONS <span class="carrot" id="toggle-carrot">&#9654;</span></h1>
 </div>
 
 <div class="filter content">
-    <label for="day-filter">Day:</label>
-    <select id="day-filter">
-        <option value="">Select a day</option>
-        <option value="monday">Monday</option>
-        <option value="tuesday">Tuesday</option>
-        <option value="wednesday">Wednesday</option>
-        <option value="thursday">Thursday</option>
-        <option value="friday">Friday</option>
-    </select>
+  <label for="day-filter">Day:</label>
+  <select id="day-filter">
+    <option value="">Select a day</option>
+    <option value="monday">Monday</option>
+    <option value="tuesday">Tuesday</option>
+    <option value="wednesday">Wednesday</option>
+    <option value="thursday">Thursday</option>
+    <option value="friday">Friday</option>
+  </select>
 
-    <label for="professor-filter">Professor:</label>
-    <select id="professor-filter">
-        <option value="">Select a professor</option>
-        <option value="Art White">Art White</option>
-        <option value="Eggleton">Eggleton</option>
-        <option value="Doug Reed">Doug Reed</option>
-    </select>
+  <label for="professor-filter">Professor:</label>
+  <select id="professor-filter">
+    <option value="">Select a professor</option>
+    <option value="Art White">Art White</option>
+    <option value="Eggleton">Eggleton</option>
+    <option value="Doug Reed">Doug Reed</option>
+  </select>
 
-    <label for="month-filter">Month:</label>
-    <select id="month-filter">
-        <option value="">Select a month</option>
-        <option value="january">January</option>
-        <option value="february">February</option>
-        <option value="march">March</option>
-    </select>
+  <label for="month-filter">Month:</label>
+  <select id="month-filter">
+    <option value="">Select a month</option>
+    <option value="january">January</option>
+    <option value="february">February</option>
+    <option value="march">March</option>
+  </select>
 
-    <label for="term-filter">Term:</label>
-    <select id="term-filter">
-        <option value="">Select a term</option>
-        <option value="spring">Spring</option>
-        <option value="summer">Summer</option>
-        <option value="fall">Fall</option>
-        <option value="J-Term">J-Term</option>
-        <option value="online">Online</option>
-    </select>
+  <label for="term-filter">Term:</label>
+  <select id="term-filter">
+    <option value="">Select a term</option>
+    <option value="spring">Spring</option>
+    <option value="summer">Summer</option>
+    <option value="fall">Fall</option>
+    <option value="J-Term">J-Term</option>
+    <option value="online">Online</option>
+  </select>
 
-    <label for="time-filter">Time:</label>
-    <select id="time-filter">
-        <option value="">Select a time</option>
-        <option value="8:00">8:00</option>
-        <option value="8:30">8:30</option>
-        <option value="9:00">9:00</option>
-    </select>
+  <label for="time-filter">Time:</label>
+  <select id="time-filter">
+    <option value="">Select a time</option>
+    <option value="8:00">8:00</option>
+    <option value="8:30">8:30</option>
+    <option value="9:00">9:00</option>
+  </select>
 
-    <label for="building">Building:</label>
-    <select id="building">
-        <option value="">Select a building</option>
-        <option value="Euler">Euler</option>
-        <option value="Reede">Reede</option>
-    </select>
+  <label for="building">Building:</label>
+  <select id="building">
+    <option value="">Select a building</option>
+    <option value="Euler">Euler</option>
+    <option value="Reede">Reede</option>
+  </select>
 
-
-    <button id="reset-filters" style="margin-top: 10px;">Reset Filters</button>
+  <button id="reset-filters">Reset Filters</button>
 </div>
 
 <div class="catalog-container content">
-    <div class="course-card">
-        <h3> COS 120: Introduction to Computer Science </h3>
-        <div class="course-details">
-            <p><strong>Location:</strong> Euler, 2nd Floor</p>
-            <p><strong>Instructor:</strong> Professor While</p>
-        </div>
+  <div class="course-card">
+    <h3> COS 120: Introduction to Computer Science </h3>
+    <div class="course-details">
+      <p><strong>Location:</strong> Euler, 2nd Floor</p>
+      <p><strong>Instructor:</strong> Art White</p>
+      <p><strong>Day:</strong> Monday</p>
+      <p><strong>Time:</strong> 8:00</p>
+      <p><strong>Term:</strong> Spring</p>
+      <p><strong>Month:</strong> January</p>
     </div>
-    <div class="course-card">
-        <h3> MAT 101: Introduction to Mathematics </h3>
-        <div class="course-details">
-            <p><strong>Location:</strong> Euler, 3rd Floor</p>
-            <p><strong>Instructor:</strong> Dr. Eggleton</p>
-        </div>
+  </div>
+
+  <div class="course-card">
+    <h3> MAT 101: Introduction to Mathematics </h3>
+    <div class="course-details">
+      <p><strong>Location:</strong> Euler, 3rd Floor</p>
+      <p><strong>Instructor:</strong> Eggleton</p>
+      <p><strong>Day:</strong> Tuesday</p>
+      <p><strong>Time:</strong> 8:30</p>
+      <p><strong>Term:</strong> Fall</p>
+      <p><strong>Month:</strong> February</p>
     </div>
-    <div class="course-card">
-        <h3> ENG 202: English Literature </h3>
-        <div class="course-details">
-            <p><strong>Location:</strong> Reede, 1st Floor</p>
-            <p><strong>Instructor:</strong> Professor Reed</p>
-        </div>
+  </div>
+
+  <div class="course-card">
+    <h3> ENG 202: English Literature </h3>
+    <div class="course-details">
+      <p><strong>Location:</strong> Reede, 1st Floor</p>
+      <p><strong>Instructor:</strong> Doug Reed</p>
+      <p><strong>Day:</strong> Wednesday</p>
+      <p><strong>Time:</strong> 9:00</p>
+      <p><strong>Term:</strong> J-Term</p>
+      <p><strong>Month:</strong> March</p>
     </div>
+  </div>
 </div>
 
 <script>
-    // Toggle all content visibility with carrot
-    const toggleCarrot = document.getElementById('toggle-carrot');
-    const contentSections = document.querySelectorAll('.content');
+  const toggleCarrot = document.getElementById('toggle-carrot');
+  const contentSections = document.querySelectorAll('.content');
 
-    toggleCarrot.addEventListener('click', () => {
-        toggleCarrot.classList.toggle('open');
-        contentSections.forEach(section => {
-            section.style.display = (section.style.display === 'none' || !section.style.display)
-                ? 'block'
-                : 'none';
-        });
+  toggleCarrot.addEventListener('click', () => {
+    toggleCarrot.classList.toggle('open');
+    contentSections.forEach(section => {
+      section.style.display = (section.style.display === 'none' || !section.style.display)
+        ? 'block'
+        : 'none';
     });
+  });
 
-    // Toggle course detail visibility on h3 click
-    document.querySelectorAll('.course-card h3').forEach(header => {
-        header.addEventListener('click', () => {
-            const details = header.nextElementSibling;
-            if (details) {
-                details.style.display = (details.style.display === 'block') ? 'none' : 'block';
-            }
-        });
+  document.querySelectorAll('.course-card h3').forEach(header => {
+    header.addEventListener('click', () => {
+      const details = header.nextElementSibling;
+      details.style.display = (details.style.display === 'block') ? 'none' : 'block';
     });
+  });
 
-    // Filters
-    const filters = {
-        day: document.getElementById('day-filter'),
-        professor: document.getElementById('professor-filter'),
-        term: document.getElementById('term-filter'),
-        time: document.getElementById('time-filter'),
-        month: document.getElementById('month-filter')
-    };
+  const filters = {
+    day: document.getElementById('day-filter'),
+    professor: document.getElementById('professor-filter'),
+    term: document.getElementById('term-filter'),
+    time: document.getElementById('time-filter'),
+    month: document.getElementById('month-filter'),
+    building: document.getElementById('building')
+  };
 
-    const courseCards = document.querySelectorAll('.course-card');
+  const courseCards = document.querySelectorAll('.course-card');
 
-    function applyFilters() {
-        courseCards.forEach(card => {
-            const details = card.querySelector('.course-details').textContent.toLowerCase();
-
-            const matches =
-                (!filters.day.value || details.includes(filters.day.value.toLowerCase())) &&
-                (!filters.professor.value || details.includes(filters.professor.value.toLowerCase())) &&
-                (!filters.term.value || details.includes(filters.term.value.toLowerCase())) &&
-                (!filters.time.value || details.includes(filters.time.value.toLowerCase())) &&
-                (!filters.month.value || details.includes(filters.month.value.toLowerCase()));
-
-            card.style.display = matches ? 'block' : 'none';
-        });
-    }
-
-    // Attach change event to each filter
-    Object.values(filters).forEach(select => {
-        if (select) {
-            select.addEventListener('change', applyFilters);
-        }
+  function applyFilters() {
+    courseCards.forEach(card => {
+      const details = card.querySelector('.course-details').textContent.toLowerCase();
+      const matches =
+        (!filters.day.value || details.includes(filters.day.value.toLowerCase())) &&
+        (!filters.professor.value || details.includes(filters.professor.value.toLowerCase())) &&
+        (!filters.term.value || details.includes(filters.term.value.toLowerCase())) &&
+        (!filters.time.value || details.includes(filters.time.value.toLowerCase())) &&
+        (!filters.month.value || details.includes(filters.month.value.toLowerCase())) &&
+        (!filters.building.value || details.includes(filters.building.value.toLowerCase()));
+      card.style.display = matches ? 'block' : 'none';
     });
+  }
 
-    // Reset filters and show all cards
-    document.getElementById('reset-filters').addEventListener('click', () => {
-        Object.values(filters).forEach(select => {
-            if (select) {
-                select.selectedIndex = 0;
-            }
-        });
-        applyFilters();
-    });
+  Object.values(filters).forEach(select => {
+    select.addEventListener('change', applyFilters);
+  });
 
-    // Initial application of filters
+  document.getElementById('reset-filters').addEventListener('click', () => {
+    Object.values(filters).forEach(select => select.selectedIndex = 0);
     applyFilters();
-</script>
+  });
 
+  applyFilters();
+</script>
 
 </body>
 </html>
