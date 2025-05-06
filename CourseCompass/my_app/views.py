@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
-from .models import LoginForm
+from .models import LoginForm, ModelData
 from django.views.decorators.csrf import csrf_exempt
 import json
 
@@ -55,3 +55,7 @@ def receive_json(request):
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
     return JsonResponse({"error": "Only POST allowed"}, status=405)
+
+def modelData_view(request):
+	data = ModelData.objects.all()
+	return render(request, 'catalog_page.html', {'data': data})
