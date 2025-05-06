@@ -1,0 +1,20 @@
+/* Center the form element */
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #5c5c5c;
+    border: 5px solid #5c5c5c;
+    width: 400px;
+    height: 250px;
+}
+
+.login label {
+    color: white;
+    display: inline-block;
+}
+
+h1 {
+    color: white;
+}
