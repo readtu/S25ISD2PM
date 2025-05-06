@@ -206,5 +206,43 @@
   applyFilters();
 </script>
 
+
+
+<!-- This section was made by Joshua to test database connection -->
+
+<py-script>
+	from flask import Flask, jsonify
+	import psycopg2
+
+	app = Flask("my_app")
+
+	@app.route('/data')
+
+	def get_data():
+		connection = psycopg2.connect("dbname='hammer' user='cranzau' password='test' host='localhost'")
+		cursor = conn.cursor()
+		cursor.execute("Select * FROM my_app_modeldata")
+		rows = cursor.fetchall()
+		connection.close()
+		return jsonify(rows)
+</py-script>
+
+<button onclick="fetchData()">Fetch Data</button>
+<div id="data"></div>
+
+<script>
+
+	function fetchData() {
+		fetch('/data')
+			.then(response => response.json())
+				.then(data =>> {
+					document.getElementById('data').innerText = JSON.stringify(data);
+					});)
+	}
+
+</script>
+
+
+
 </body>
 </html>
