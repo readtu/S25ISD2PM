@@ -51,11 +51,6 @@ def receive_json(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            print("Received iChair data:", data)
-            print("📥 Received data from iChair:", data)
-            print("Course:", data.get("term_code"))
-            print("Instructor:", data.get("course_data"))
-            # TODO: Save to DB, or process however you want
             return JsonResponse({"status": "success"})
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
