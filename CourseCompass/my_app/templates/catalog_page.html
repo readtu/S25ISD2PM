@@ -13,33 +13,33 @@
 
 <nav class="navbar">
   <div class="nav-left">
-    <a href="{% url 'home' %}" class="logo">Hammer</a>
-
-    <div class="dropdown">
-      <button class="dropbtn">Approved Sections</button>
-      <div class="dropdown-content">
-        <a href="{% url 'catalog' %}">Approved Sections</a>
-      </div>
-    </div>
-    <!--
-    <div class="dropdown">
-      <button class="dropbtn">Tasks</button>
-      <div class="dropdown-content">
-        <a href="{% url 'to-do' %}">To-Do</a>
-        <a href="{% url 'pending' %}">Pending</a>
-      </div>
-    </div>
+      <!-- Using the URL name defined in your urls.py -->
+      <a href="{% url 'home' %}" class="logo">
+          <img src="{% static 'my_app/images/hammerlogo.png' %}" alt="Profile" style="width:150px;height: 150px;"> 
+      </a>
+      <div class="dropdown">
+<button class="dropbtn">Approved Sections</button>
+<div class="dropdown-content">
+  <a href="{% url 'catalog' %}">Approved Sections</a>
+</div>
+</div>
+<div class="dropdown">
+<button class="dropbtn">Tasks</button>
+<div class="dropdown-content">
+  <a href="{% url 'to-do' %}">To-Do</a>
+  <a href="{% url 'pending' %}">Pending</a>
+</div>
+</div>
   </div>
--->
   <div class="profile-container">
-    <div class="profile-icon">
-      <img src="{% static 'my_app/images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
-    </div>
-    <div class="profile-dropdown">
-      <a href="{% url 'profile_page' %}">Profile</a>
-      <a href="{% url 'settings' %}">Settings</a>
-      <a href="{% url 'login' %}">Logout</a>
-    </div>
+      <div class="profile-icon">
+          <img src="{% static 'my_app/images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
+      </div>
+      <div class="profile-dropdown">
+          <a href="{% url 'profile_page' %}">Profile</a>
+          <a href="{% url 'settings' %}">Settings</a>
+          <a href="{% url 'login' %}">Logout</a>
+      </div>
   </div>
 </nav>
 
