@@ -209,7 +209,7 @@
 
 
 <!-- This section was made by Joshua to test database connection -->
-
+<!--
 <py-script>
 	from flask import Flask, jsonify
 	import psycopg2
@@ -242,7 +242,18 @@
 
 </script>
 
+-->
 
+{% if data %}
+	<ul>
+		{% for item in data %}
+			<li>{{item.field_name}}</li>
+		{% endfor %}
+	</ul>
+
+{% else %}
+	<p>No data available.</p>
+{% endif %}
 
 </body>
 </html>
