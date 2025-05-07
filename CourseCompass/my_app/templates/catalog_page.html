@@ -210,16 +210,12 @@
 
 <!-- This section was made by Joshua to test database connection -->
 
-{% if data %}
 	<ul>
 		{% for item in data %}
-			<li>{{item.field_name}}</li>
+			<li>{{item.json_data}}</li>
 		{% endfor %}
 	</ul>
 
-{% else %}
-	<p>No data available.</p>
-{% endif %}
 
 </body>
 </html>
