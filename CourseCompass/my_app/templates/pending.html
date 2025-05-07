@@ -11,7 +11,9 @@
         <div class="background"></div>
         <nav class="navbar">
             <div class="nav-left">
-                <a href="{% url 'home' %}" class="logo">Hammer</a>
+                <a href="{% url 'home' %}" class="logo">
+                    <img src="{% static 'my_app/images/hammer_logo.png' %}" alt="Profile" style="width: 50px;height: 30px;"> 
+                </a>
                 <div class="dropdown">
                     <button class="dropbtn">Approved Sections</button>
                     <div class="dropdown-content">
