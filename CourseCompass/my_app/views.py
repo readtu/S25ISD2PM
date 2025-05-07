@@ -52,7 +52,7 @@ def receive_json(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-	    iChairData.objects.create(
+            iChairData.objects.create(
 	        termCode = data.get("term_code")
                 termNum = data.get("term_name")
                 crn = data.get("crn")
