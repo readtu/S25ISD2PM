@@ -5,7 +5,11 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
+<<<<<<< HEAD
 from .models import LoginForm, ModelData
+=======
+from .models import LoginForm, iChairData
+>>>>>>> cec52eb (added model for iChair data)
 from django.views.decorators.csrf import csrf_exempt
 import json
 
@@ -52,6 +56,11 @@ def receive_json(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
+	    iChairData.objects.create(
+	        termCode = data.get("term_code")
+                termNum = data.get("term_name")
+                crn = data.get("crn")
+	    )
             return JsonResponse({"status": "success"})
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
