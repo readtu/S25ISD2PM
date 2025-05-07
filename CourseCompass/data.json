@@ -3,7 +3,7 @@
 		"model": "my_app.ModelData",
 		"pk": 1,
 		"fields": {
-			{
+			"json_data": {
 				"academicPeriod": {
 					"category": {
 						"type": null,

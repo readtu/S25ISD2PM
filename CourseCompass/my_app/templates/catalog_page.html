@@ -213,12 +213,12 @@
 {% if data %}
 	<ul>
 		{% for item in data %}
-			<li>{{item.field_name}}</li>
+			<li>{{item.json_data}}</li>
 		{% endfor %}
 	</ul>
 
 {% else %}
-	<p>No data available.</p>
+	<li>{data}</li>
 {% endif %}
 
 </body>

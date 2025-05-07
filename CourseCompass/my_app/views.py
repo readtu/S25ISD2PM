@@ -14,7 +14,8 @@ def home_page_view(request):
 	return render(request, "home_page.html")
 
 def catalog_page_view(request):
-    return render(request, "catalog_page.html")
+	data = ModelData.objects.all()
+	return render(request, "catalog_page.html", {'data': data})
 
 def complete_view(request):
 	return render(request, "pending.html")
@@ -56,6 +57,6 @@ def receive_json(request):
             return JsonResponse({"error": "Invalid JSON"}, status=400)
     return JsonResponse({"error": "Only POST allowed"}, status=405)
 
-def modelData_view(request):
-	data = ModelData.objects.all()
-	return render(request, 'catalog_page.html', {'data': data})
+#def modelData_view(request):
+#	data = ModelData.objects.all()
+#	return render(request, 'catalog_page.html', {'data': data})
