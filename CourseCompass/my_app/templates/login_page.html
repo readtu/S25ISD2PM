@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Hammer</title>
+		<title>Sign-in</title>
 		<link rel="stylesheet" href="{% static 'my_app/css/styles.css' %}">
 		<link rel="stylesheet" href="{% static 'my_app/css/login_page.css' %}"> 
 	</head>
@@ -12,11 +12,13 @@
 		<nav class="navbar">
 			<div class="nav-left">
 				<!-- Use dynamic URL resolution if you have a named URL for home -->
-				<a href="{% url 'login' %}" class="logo">Hammer</a>
+				<a href="{% url 'login' %}" class="logo">
+                    <img src="{% static 'my_app/images/hammer_logo.png' %}" alt="Profile" style="width: 50px;height: 30px;"> 
+                </a>
 			</div>
 			<div class="profile-container">
 				<div class="profile-icon">
-					<img src="{% static 'my_app/images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
+					<img src="{% static 'my_app/images/hammer_logo.png' %}" alt="Profile" style="width: 50px;height: 40px;"> 
 				</div>
 				<div class="profile-dropdown">
 					<a href="{% url 'login' %}">login</a>

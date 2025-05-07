@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Hammer</title>
+		<title>Settings</title>
 		<link rel="stylesheet" href="{% static 'my_app/css/styles.css' %}">
 	</head>
     <body>
@@ -11,7 +11,9 @@
         <nav class="navbar">
             <div class="nav-left">
                 <!-- Using the URL name defined in your urls.py -->
-                <a href="{% url 'home' %}" class="logo">Hammer</a>
+                <a href="{% url 'home' %}" class="logo">
+                    <img src="{% static 'my_app/images/hammer_logo.png' %}" alt="Profile" style="width: 50px;height: 30px;"> 
+                </a>
             </div>
             <div class="profile-container">
                 <div class="profile-icon">
@@ -27,5 +29,20 @@
 
 
         <h1>Settings</h1>
+	<h2>Data from iChair</h2>
+        <ul id="data-list"></ul>
+
+        <script>
+        fetch('/api/receive/')
+        .then(response => response.json())
+        .then(data => {
+            const list = document.getElementById('data-list');
+            data.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - ${item.value}`;
+                list.appendChild(li);
+            });
+        });
+        </script>
     </body>
 </html>

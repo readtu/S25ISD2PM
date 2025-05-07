@@ -1,0 +1,749 @@
+[
+	{ "model": "my_app.ModelData",
+		"pk": 1,
+		"fields": {
+			"json_data": {
+				"f0a028eb-b7ef-44b1-a4c0-a28f71d0187e": {
+					"academicLevels": [
+						{
+							"id": "e390abf4-7aea-4f74-92c1-f670339ff9b8"
+						}
+					],
+					"billing": {
+						"increment": 0,
+						"maximum": 3,
+						"minimum": 0
+					},
+					"credits": [
+						{
+							"creditCategory": {
+								"creditType": "institution",
+								"detail": {
+									"id": "8369f555-a89e-492f-a9b4-a2f859b1416d"
+								}
+							},
+							"increment": 0,
+							"maximum": 3,
+							"measure": "hour",
+							"minimum": 0
+						}
+					],
+					"description": "Planning, teaching, and evaluating learning in ESL/EFL settings. Field experience lab is included.",
+					"gradeSchemes": [
+						{
+							"id": "93067d33-acaa-4948-acc2-6e2394cea998"
+						}
+					],
+					"id": "f0a028eb-b7ef-44b1-a4c0-a28f71d0187e",
+					"instructionalMethods": [
+						{
+							"id": "27c0f283-0e0a-45e2-ad14-268b2f74dd66"
+						},
+						{
+							"id": "456df753-d158-4a33-a695-5a0b35ff8806"
+						}
+					],
+					"number": "303",
+					"owningInstitutionUnits": [
+						{
+							"institutionUnit": {
+								"id": "187c8d10-4585-434e-988a-e7a8ad0afb4e"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "f3132310-48cc-45fb-88c9-afc39683657b"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "524b4821-8f0e-47ec-8c82-1f17781c4103"
+							},
+							"ownershipPercentage": 100
+						}
+					],
+					"reportingDetail": {
+						"contact": {
+							"increment": 0,
+							"maximum": 3,
+							"minimum": 0
+						},
+						"courseWeight": null,
+						"lab": null,
+						"lecture": {
+							"increment": 0,
+							"maximum": 3,
+							"minimum": 0
+						},
+						"type": "Nebraska"
+					},
+					"schedulingEndOn": "2008-12-11T00:00:00+00:00",
+					"schedulingStartOn": "2005-08-30T00:00:00+00:00",
+					"subject": {
+						"id": "dd61c754-a7c6-42c4-bb55-ce828e39eb42"
+					},
+					"title": "Methods of TESOL"
+				},
+				"1f206060-cd7a-4f09-ba60-a1a4839c9f76" : {
+					"academicLevels": [
+						{
+							"id": "e390abf4-7aea-4f74-92c1-f670339ff9b8"
+						}
+					],
+					"billing": {
+						"increment": 0,
+						"maximum": null,
+						"minimum": 3
+					},
+					"credits": [
+						{
+							"creditCategory": {
+								"creditType": "institution",
+								"detail": {
+									"id": "8369f555-a89e-492f-a9b4-a2f859b1416d"
+								}
+							},
+							"increment": 0,
+							"maximum": null,
+							"measure": "hour",
+							"minimum": 3
+						}
+					],
+					"description": "Planning, teaching, and evaluating learning in ESL/EFL settings. Field experience lab is included.",
+					"gradeSchemes": [
+						{
+							"id": "93067d33-acaa-4948-acc2-6e2394cea998"
+						}
+					],
+					"id": "1f206060-cd7a-4f09-ba60-a1a4839c9f76",
+					"instructionalMethods": [
+						{
+							"id": "27c0f283-0e0a-45e2-ad14-268b2f74dd66"
+						},
+						{
+							"id": "456df753-d158-4a33-a695-5a0b35ff8806"
+						}
+					],
+					"number": "303",
+					"owningInstitutionUnits": [
+						{
+							"institutionUnit": {
+								"id": "187c8d10-4585-434e-988a-e7a8ad0afb4e"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "f3132310-48cc-45fb-88c9-afc39683657b"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "524b4821-8f0e-47ec-8c82-1f17781c4103"
+							},
+							"ownershipPercentage": 100
+						}
+					],
+					"reportingDetail": {
+						"contact": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"courseWeight": null,
+						"lab": null,
+						"lecture": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"type": "Nebraska"
+					},
+					"schedulingEndOn": "2008-12-11T00:00:00+00:00",
+					"schedulingStartOn": "2005-08-30T00:00:00+00:00",
+					"subject": {
+						"id": "dd61c754-a7c6-42c4-bb55-ce828e39eb42"
+					},
+					"title": "Methods of Teaching  ESL/EFL"
+				},
+				"15ea36eb-0330-4cc0-a7d9-860d233ce3a0": {
+					"academicLevels": [
+						{
+							"id": "e390abf4-7aea-4f74-92c1-f670339ff9b8"
+						}
+					],
+					"billing": {
+						"increment": 0,
+						"maximum": 4,
+						"minimum": 1
+					},
+					"credits": [
+						{
+							"creditCategory": {
+								"creditType": "institution",
+								"detail": {
+									"id": "8369f555-a89e-492f-a9b4-a2f859b1416d"
+								}
+							},
+							"increment": 0,
+							"maximum": 4,
+							"measure": "hour",
+							"minimum": 1
+						}
+					],
+					"description": "Application of study will serve as a practical measure of learning and expertise.  To meet this requirement a student will serve as a Teaching Assistant for a Modern, Ballet, Tap, Jazz, MT class.  This requirement could also be satisfied by serving as dance captain in a faculty directed production.",
+					"gradeSchemes": [
+						{
+							"id": "93067d33-acaa-4948-acc2-6e2394cea998"
+						}
+					],
+					"id": "15ea36eb-0330-4cc0-a7d9-860d233ce3a0",
+					"instructionalMethods": [
+						{
+							"id": "cef96621-b712-459e-9116-2d6dd9cffb40"
+						}
+					],
+					"number": "393",
+					"owningInstitutionUnits": [
+						{
+							"institutionUnit": {
+								"id": "235d29a0-bf83-4913-a301-59357a1553f7"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "ec65a9a9-671f-41c3-a667-371f33259c9b"
+							},
+							"ownershipPercentage": 100
+						}
+					],
+					"reportingDetail": {
+						"contact": {
+							"increment": 0,
+							"maximum": 4,
+							"minimum": 1
+						},
+						"courseWeight": null,
+						"lab": null,
+						"lecture": null,
+						"type": "Nebraska"
+					},
+					"schedulingEndOn": "2018-12-13T00:00:00+00:00",
+					"schedulingStartOn": "2018-08-27T00:00:00+00:00",
+					"subject": {
+						"id": "91f5cf31-fbd6-46c5-b0e1-7aa737ea155d"
+					},
+					"title": "-"
+				},
+				"957f79fc-d650-4fb5-943a-7afbb75d4091": {
+					"academicLevels": [
+						{
+							"id": "e390abf4-7aea-4f74-92c1-f670339ff9b8"
+						}
+					],
+					"billing": {
+						"increment": 0,
+						"maximum": null,
+						"minimum": 12
+					},
+					"credits": [
+						{
+							"creditCategory": {
+								"creditType": "institution",
+								"detail": {
+									"id": "8369f555-a89e-492f-a9b4-a2f859b1416d"
+								}
+							},
+							"increment": 0,
+							"maximum": null,
+							"measure": "hour",
+							"minimum": 12
+						}
+					],
+					"description": "A professional semester of supervised field practicum in a social work setting; 480 hours required.  Prerequisite: Completion of all required courses in the social work major.  Offered spring semester.\n",
+					"gradeSchemes": [
+						{
+							"id": "93067d33-acaa-4948-acc2-6e2394cea998"
+						}
+					],
+					"id": "957f79fc-d650-4fb5-943a-7afbb75d4091",
+					"instructionalMethods": [
+						{
+							"id": "cef96621-b712-459e-9116-2d6dd9cffb40"
+						}
+					],
+					"number": "492",
+					"owningInstitutionUnits": [
+						{
+							"institutionUnit": {
+								"id": "b71d3ca6-f297-4be7-b287-e1357e50e453"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "e9d8ee77-ff3a-44eb-8f2b-d2fcdaae336d"
+							},
+							"ownershipPercentage": 100
+						}
+					],
+					"reportingDetail": null,
+					"schedulingEndOn": "4712-12-30T00:00:00+00:00",
+					"schedulingStartOn": "1997-09-02T00:00:00+00:00",
+					"subject": {
+						"id": "b441255f-1912-4ee0-a02d-a071666685d9"
+					},
+					"title": "10"
+				},
+				"23b7c1c4-ae7e-499b-a3fd-10e3b31f5532": {
+					"academicLevels": [
+						{
+							"id": "e390abf4-7aea-4f74-92c1-f670339ff9b8"
+						}
+					],
+					"billing": {
+						"increment": 0,
+						"maximum": null,
+						"minimum": 3
+					},
+					"credits": [
+						{
+							"creditCategory": {
+								"creditType": "institution",
+								"detail": {
+									"id": "8369f555-a89e-492f-a9b4-a2f859b1416d"
+								}
+							},
+							"increment": 0,
+							"maximum": null,
+							"measure": "hour",
+							"minimum": 3
+						}
+					],
+					"description": null,
+					"gradeSchemes": [
+						{
+							"id": "93067d33-acaa-4948-acc2-6e2394cea998"
+						}
+					],
+					"id": "23b7c1c4-ae7e-499b-a3fd-10e3b31f5532",
+					"instructionalMethods": [
+						{
+							"id": "27c0f283-0e0a-45e2-ad14-268b2f74dd66"
+						}
+					],
+					"number": "HI389",
+					"owningInstitutionUnits": [
+						{
+							"institutionUnit": {
+								"id": "4c5107dc-4c41-4fa1-b8b9-dbb1cb290498"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "cfb08e1c-ccb9-40d7-a4b7-ab3771d1d250"
+							},
+							"ownershipPercentage": 100
+						}
+					],
+					"reportingDetail": {
+						"contact": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"courseWeight": null,
+						"lab": null,
+						"lecture": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"type": "Nebraska"
+					},
+					"schedulingEndOn": "4712-12-30T00:00:00+00:00",
+					"schedulingStartOn": "2008-08-25T00:00:00+00:00",
+					"subject": {
+						"id": "4977645f-6d8f-4ec7-8a0d-dd3a70c4c2b7"
+					},
+					"title": "19th Century European History"
+				},
+				"742b4ca6-1047-4a4b-83cd-67241b814688": {
+					"academicLevels": [
+						{
+							"id": "e390abf4-7aea-4f74-92c1-f670339ff9b8"
+						}
+					],
+					"billing": {
+						"increment": 0,
+						"maximum": null,
+						"minimum": 3
+					},
+					"credits": [
+						{
+							"creditCategory": {
+								"creditType": "institution",
+								"detail": {
+									"id": "8369f555-a89e-492f-a9b4-a2f859b1416d"
+								}
+							},
+							"increment": 0,
+							"maximum": null,
+							"measure": "hour",
+							"minimum": 3
+						}
+					],
+					"description": null,
+					"gradeSchemes": [
+						{
+							"id": "93067d33-acaa-4948-acc2-6e2394cea998"
+						}
+					],
+					"id": "742b4ca6-1047-4a4b-83cd-67241b814688",
+					"instructionalMethods": [
+						{
+							"id": "27c0f283-0e0a-45e2-ad14-268b2f74dd66"
+						}
+					],
+					"number": "HI389",
+					"owningInstitutionUnits": [
+						{
+							"institutionUnit": {
+								"id": "235d29a0-bf83-4913-a301-59357a1553f7"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "cfb08e1c-ccb9-40d7-a4b7-ab3771d1d250"
+							},
+							"ownershipPercentage": 100
+						}
+					],
+					"reportingDetail": {
+						"contact": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"courseWeight": null,
+						"lab": null,
+						"lecture": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"type": "Nebraska"
+					},
+					"schedulingEndOn": "4712-12-30T00:00:00+00:00",
+					"schedulingStartOn": "2008-08-25T00:00:00+00:00",
+					"subject": {
+						"id": "4977645f-6d8f-4ec7-8a0d-dd3a70c4c2b7"
+					},
+					"title": "19th Century European History"
+				},
+				"458cc0b1-69c1-4643-8897-eab2462fd2ee": {
+					"academicLevels": [
+						{
+							"id": "e390abf4-7aea-4f74-92c1-f670339ff9b8"
+						}
+					],
+					"billing": {
+						"increment": 0,
+						"maximum": null,
+						"minimum": 3
+					},
+					"credits": [
+						{
+							"creditCategory": {
+								"creditType": "institution",
+								"detail": {
+									"id": "8369f555-a89e-492f-a9b4-a2f859b1416d"
+								}
+							},
+							"increment": 0,
+							"maximum": null,
+							"measure": "hour",
+							"minimum": 3
+						}
+					],
+					"description": null,
+					"gradeSchemes": [
+						{
+							"id": "93067d33-acaa-4948-acc2-6e2394cea998"
+						}
+					],
+					"id": "458cc0b1-69c1-4643-8897-eab2462fd2ee",
+					"instructionalMethods": [
+						{
+							"id": "27c0f283-0e0a-45e2-ad14-268b2f74dd66"
+						}
+					],
+					"number": "HI389",
+					"owningInstitutionUnits": [
+						{
+							"institutionUnit": {
+								"id": "b91c27d6-78d7-46ae-8e20-94b51978da12"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "cfb08e1c-ccb9-40d7-a4b7-ab3771d1d250"
+							},
+							"ownershipPercentage": 100
+						}
+					],
+					"reportingDetail": {
+						"contact": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"courseWeight": null,
+						"lab": null,
+						"lecture": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"type": "Nebraska"
+					},
+					"schedulingEndOn": "4712-12-30T00:00:00+00:00",
+					"schedulingStartOn": "2008-08-25T00:00:00+00:00",
+					"subject": {
+						"id": "4977645f-6d8f-4ec7-8a0d-dd3a70c4c2b7"
+					},
+					"title": "19th Century European History"
+				},
+				"33dd5144-3d27-4017-a640-f876d4213b89": {
+					"academicLevels": [
+						{
+							"id": "e390abf4-7aea-4f74-92c1-f670339ff9b8"
+						}
+					],
+					"billing": {
+						"increment": 0,
+						"maximum": null,
+						"minimum": 3
+					},
+					"credits": [
+						{
+							"creditCategory": {
+								"creditType": "institution",
+								"detail": {
+									"id": "8369f555-a89e-492f-a9b4-a2f859b1416d"
+								}
+							},
+							"increment": 0,
+							"maximum": null,
+							"measure": "hour",
+							"minimum": 3
+						}
+					],
+					"description": null,
+					"gradeSchemes": [
+						{
+							"id": "93067d33-acaa-4948-acc2-6e2394cea998"
+						}
+					],
+					"id": "33dd5144-3d27-4017-a640-f876d4213b89",
+					"instructionalMethods": [
+						{
+							"id": "27c0f283-0e0a-45e2-ad14-268b2f74dd66"
+						}
+					],
+					"number": "HI389",
+					"owningInstitutionUnits": [
+						{
+							"institutionUnit": {
+								"id": "82492df0-616d-4fdf-9c42-286ad413bdd7"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "cfb08e1c-ccb9-40d7-a4b7-ab3771d1d250"
+							},
+							"ownershipPercentage": 100
+						}
+					],
+					"reportingDetail": {
+						"contact": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"courseWeight": null,
+						"lab": null,
+						"lecture": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"type": "Nebraska"
+					},
+					"schedulingEndOn": "4712-12-30T00:00:00+00:00",
+					"schedulingStartOn": "2008-08-25T00:00:00+00:00",
+					"subject": {
+						"id": "4977645f-6d8f-4ec7-8a0d-dd3a70c4c2b7"
+					},
+					"title": "19th Century European History"
+				},
+				"d972740d-caff-407b-b733-d555cc93858e": {
+					"academicLevels": [
+						{
+							"id": "e390abf4-7aea-4f74-92c1-f670339ff9b8"
+						}
+					],
+					"billing": {
+						"increment": 0,
+						"maximum": null,
+						"minimum": 3
+					},
+					"credits": [
+						{
+							"creditCategory": {
+								"creditType": "institution",
+								"detail": {
+									"id": "8369f555-a89e-492f-a9b4-a2f859b1416d"
+								}
+							},
+							"increment": 0,
+							"maximum": null,
+							"measure": "hour",
+							"minimum": 3
+						}
+					],
+					"description": "This course develops the skills involved in successfully managing a client-driven production project.  Producing tasks including pre-production, budgeting, scheduling and client relations are emphasized.  Students work with an outside organization to produce a professional video or film project.  Prerequisite: MCM 220.  Offered fall semester of even years.\n",
+					"gradeSchemes": [
+						{
+							"id": "93067d33-acaa-4948-acc2-6e2394cea998"
+						}
+					],
+					"id": "d972740d-caff-407b-b733-d555cc93858e",
+					"instructionalMethods": [
+						{
+							"id": "27c0f283-0e0a-45e2-ad14-268b2f74dd66"
+						}
+					],
+					"number": "430",
+					"owningInstitutionUnits": [
+						{
+							"institutionUnit": {
+								"id": "235d29a0-bf83-4913-a301-59357a1553f7"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "6ce2c3f4-f3df-4238-a022-036387ab4c2e"
+							},
+							"ownershipPercentage": 100
+						}
+					],
+					"reportingDetail": {
+						"contact": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"courseWeight": null,
+						"lab": null,
+						"lecture": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"type": "Nebraska"
+					},
+					"schedulingEndOn": "4712-12-30T00:00:00+00:00",
+					"schedulingStartOn": "2010-08-30T00:00:00+00:00",
+					"subject": {
+						"id": "e1ca7628-27c0-4397-bfe9-be617d6573bd"
+					},
+					"title": "2"
+				},
+				"e683b7ff-d1df-4f5e-a033-2175e98e6f1d": {
+					"academicLevels": [
+						{
+							"id": "e390abf4-7aea-4f74-92c1-f670339ff9b8"
+						}
+					],
+					"billing": {
+						"increment": 0,
+						"maximum": null,
+						"minimum": 3
+					},
+					"credits": [
+						{
+							"creditCategory": {
+								"creditType": "institution",
+								"detail": {
+									"id": "8369f555-a89e-492f-a9b4-a2f859b1416d"
+								}
+							},
+							"increment": 0,
+							"maximum": null,
+							"measure": "hour",
+							"minimum": 3
+						}
+					],
+					"description": null,
+					"gradeSchemes": [
+						{
+							"id": "93067d33-acaa-4948-acc2-6e2394cea998"
+						}
+					],
+					"id": "e683b7ff-d1df-4f5e-a033-2175e98e6f1d",
+					"instructionalMethods": [
+						{
+							"id": "27c0f283-0e0a-45e2-ad14-268b2f74dd66"
+						}
+					],
+					"number": "HI390",
+					"owningInstitutionUnits": [
+						{
+							"institutionUnit": {
+								"id": "4c5107dc-4c41-4fa1-b8b9-dbb1cb290498"
+							},
+							"ownershipPercentage": 100
+						},
+						{
+							"institutionUnit": {
+								"id": "cfb08e1c-ccb9-40d7-a4b7-ab3771d1d250"
+							},
+							"ownershipPercentage": 100
+						}
+					],
+					"reportingDetail": {
+						"contact": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"courseWeight": null,
+						"lab": null,
+						"lecture": {
+							"increment": 0,
+							"maximum": null,
+							"minimum": 3
+						},
+						"type": "Nebraska"
+					},
+					"schedulingEndOn": "4712-12-30T00:00:00+00:00",
+					"schedulingStartOn": "2008-08-25T00:00:00+00:00",
+					"subject": {
+						"id": "4977645f-6d8f-4ec7-8a0d-dd3a70c4c2b7"
+					},
+					"title": "20th Century European History"
+				}
+			}
+		}
+	}
+]

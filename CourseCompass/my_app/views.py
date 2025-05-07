@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
-from .models import LoginForm
+from .models import LoginForm, iChairData
 from django.views.decorators.csrf import csrf_exempt
 import json
 
@@ -14,7 +14,8 @@ def home_page_view(request):
 	return render(request, "home_page.html")
 
 def catalog_page_view(request):
-    return render(request, "catalog_page.html")
+	data = ModelData.objects.all()
+	return render(request, "catalog_page.html", {'data': data})
 
 def complete_view(request):
 	return render(request, "pending.html")
@@ -51,12 +52,16 @@ def receive_json(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            print("Received iChair data:", data)
-            print("📥 Received data from iChair:", data)
-            print("Course:", data.get("term_code"))
-            print("Instructor:", data.get("course_data"))
-            # TODO: Save to DB, or process however you want
+            iChairData.objects.create(
+	            termCode = data.get("term_code"),
+                termNum = data.get("term_name"),
+                crn = data.get("crn"),
+	        )
             return JsonResponse({"status": "success"})
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
     return JsonResponse({"error": "Only POST allowed"}, status=405)
+
+#def modelData_view(request):
+#	data = ModelData.objects.all()
+#	return render(request, 'catalog_page.html', {'data': data})
