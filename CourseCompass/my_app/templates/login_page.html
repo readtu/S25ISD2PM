@@ -12,7 +12,9 @@
 		<nav class="navbar">
 			<div class="nav-left">
 				<!-- Use dynamic URL resolution if you have a named URL for home -->
-				<a href="{% url 'login' %}" class="logo">Hammer</a>
+				<a href="{% url 'home' %}" class="logo">
+                    <img src="{% static 'my_app/images/hammer_logo.png' %}" alt="Profile" style="width: 50px;height: 30px;"> 
+                </a>
 			</div>
 			<div class="profile-container">
 				<div class="profile-icon">
