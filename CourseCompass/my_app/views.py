@@ -53,10 +53,10 @@ def receive_json(request):
         try:
             data = json.loads(request.body)
             iChairData.objects.create(
-	        termCode = data.get("term_code")
-                termNum = data.get("term_name")
-                crn = data.get("crn")
-	    )
+	            termCode = data.get("term_code"),
+                termNum = data.get("term_name"),
+                crn = data.get("crn"),
+	        )
             return JsonResponse({"status": "success"})
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
