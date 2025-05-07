@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="background"></div>
+  <div class="background"></div>
 
 <nav class="navbar">
   <div class="nav-left">
@@ -35,13 +35,17 @@
       <div class="profile-icon">
           <img src="{% static 'my_app/images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
       </div>
-      <div class="profile-dropdown">
-          <a href="{% url 'profile_page' %}">Profile</a>
-          <a href="{% url 'settings' %}">Settings</a>
-          <a href="{% url 'login' %}">Logout</a>
+      <div class="profile-container">
+          <div class="profile-icon">
+              <img src="{% static 'my_app/images/profile_image.jpg' %}" alt="Profile" style="width:60px;height:60px;">
+          </div>
+          <div class="profile-dropdown">
+              <a href="{% url 'profile_page' %}">Profile</a>
+              <a href="{% url 'settings' %}">Settings</a>
+              <a href="{% url 'login' %}">Logout</a>
+          </div>
       </div>
-  </div>
-</nav>
+    </nav>
 
 <div class="centered">
   <h1>APPROVED SECTIONS <span class="carrot" id="toggle-carrot">&#9654;</span></h1>
