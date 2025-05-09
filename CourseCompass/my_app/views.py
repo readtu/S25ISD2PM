@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
-from .models import LoginForm, iChairData
+from .models import ModelData, LoginForm, iChairData
 from django.views.decorators.csrf import csrf_exempt
 import json
 
