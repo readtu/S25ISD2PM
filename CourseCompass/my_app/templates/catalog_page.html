@@ -211,9 +211,25 @@
 <!-- This section was made by Joshua to test database connection -->
 
 	<ul>
+    <!--
 		{% for item in data %}
 			<li>{{item.json_data}}</li>
 		{% endfor %}
+    -->
+    {% ids = [] %}
+    {% for d in data %}
+      {% for j in d.json_data %}
+        {% ids.append(j) %}
+      (% endfor %)
+    (% endfor %)
+
+    {% for d in data %}
+      {% for i in ids %}
+        <li> {{d.json_data[i]}} </li>
+        print()
+        
+      (% endfor %)
+    (% endfor %)
 	</ul>
 
 
