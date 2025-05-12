@@ -34,7 +34,15 @@
 
         <script>
         fetch('/api/receive/')
-        .then(response => response.json())
+        .then(response => {const statusMessage = document.getElementById('status-message');
+        if (response.ok) {
+            statusMessage.textContent = 'Status: 200 OK - Data fetched successfully!';
+            return response.json();
+        } else {
+            statusMessage.textContent = `Status: ${response.status} - Failed to fetch data.`;
+            throw new Error('Network response was not ok.');
+        }
+        })
         .then(data => {
             const list = document.getElementById('data-list');
             data.forEach(item => {
@@ -42,6 +50,10 @@
                 li.textContent = `${item.name} - ${item.value}`;
                 list.appendChild(li);
             });
+        });
+        .catch(error => {
+            document.getElementById('status-message').textContent = 'Fetch error: ' + error.message;
+            console.error('Fetch error:', error);
         });
         </script>
     </body>
