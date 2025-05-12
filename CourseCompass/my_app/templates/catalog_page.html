@@ -212,26 +212,12 @@
 
 <!-- This section was made by Joshua to test database connection -->
 
-	<ul>
-    <!--
-		{% for item in data %}
-			<li>{{item.json_data}}</li>
-		{% endfor %}
-    -->
-    {% ids = [] %}
-    {% for d in data %}
-      {% for j in d.json_data %}
-        {% ids.append(j) %}
-      (% endfor %)
-    (% endfor %)
+{% load ../pullData %}
+{{ grab_data(data) }}
 
-    {% for d in data %}
-      {% for i in ids %}
-        <li> {{d.json_data[i]}} </li>
-        <li></li>
-      (% endfor %)
-    (% endfor %)
-	</ul>
+
+
+
 
 
 </body>
