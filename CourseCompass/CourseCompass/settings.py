@@ -19,7 +19,6 @@ STATICFILES_DIRS = [
     BASE_DIR / 'CourseCompass' / 'staticfiles'
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles_collected'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 
 
