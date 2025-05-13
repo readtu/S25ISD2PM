@@ -54,6 +54,10 @@ def grab_data(data):
 				location = d.json_data[i]["reportingDetail"]["type"]
 				string = f'<p><strong>Location:</strong> {location}</p>'
 				output += string
+			else:
+				location = "None"
+				string = f'<p><strong>Location:</strong> {location}</p>'
+				output += string
 
 			start_date = d.json_data[i]["schedulingStartOn"][0:10]
 			string = f'<p><strong>Start Date:</strong> {start_date}</p>'
