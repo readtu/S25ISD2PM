@@ -6,7 +6,7 @@ register = template.Library()
 #	return "<h3>HI</h3>"
 
 def term_value(date):
-	term_intiger = date[5,6]
+	term_intiger = date[5:6]
 
 @register.simple_tag
 def grab_data(data):
@@ -54,15 +54,15 @@ def grab_data(data):
 			string = f'<p><strong>Location:</strong> {location}</p>'
 			output += string
 
-			start_date = d.json_data[i]["schedulingStartOn"][0,10]
+			start_date = d.json_data[i]["schedulingStartOn"][0:10]
 			string = f'<p><strong>Start Date:</strong> {start_date}</p>'
 			output += string
 
-			end_date = d.json_data[i]["schedulingEndOn"][0,10]
+			end_date = d.json_data[i]["schedulingEndOn"][0:10]
 			string = f'<p><strong>End Date:</strong> {end_date}</p>'
 			output += string
 
-			start_date = d.json_data[i]["schedulingStartOn"][0,10]
+			start_date = d.json_data[i]["schedulingStartOn"][0:10]
 			string = f'<p><strong>Start Date:</strong> {start_date}</p>'
 			output += string
 
