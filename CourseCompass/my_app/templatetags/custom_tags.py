@@ -1,26 +1,41 @@
 from django import template
 register = template.Library()
 
-@register.simple_tag
+# @register.simple_tag
+#def grab_data(data):
+#	return "<h3>HI</h3>"
 
+@register.simple_tag
 def grab_data(data):
+# def write_data(data):
 	ids = []
 	for d in data:
 		for j in d.json_data:
 			ids.append(j)
 
-	file = open("catalog_page.html", "w")
+	#file = open("catalog_page.html", "w")
+	output = ""
 	for d in data:
 		for i in ids:
-			file.write('<div class="course-card">')
+			output += '<div class="course-card">'
+			#file.write('<div class="course-card">')
 			title = d.json_data[i]["title"]
-			file.write('<h3>' + title + '</h3>')
-			file.write('<div class="course-details">')
+			string = f'<h3> {title} </h3>'
+			output += string
+			#file.write(string)
+			#file.write('<div class="course-details">')
+
+			output += 'div class="course-details">'
+
 			credit_hr = d.json_data[i]["billing"]["maximum"]
-			file.write('<p>' + credit_hr + '</p>')
-			file.write('</div>')
-			file.write('</div>')
+			string = f'<p> {credit_hr} </p>'
+			output += string
+			#file.write(string)
+			#file.write('</div>')
+			output += '</div>'
+			output += '</div>'
+			#file.write('</div>')
 
-	file.close()
-
+	#file.close()
+	return output
 
