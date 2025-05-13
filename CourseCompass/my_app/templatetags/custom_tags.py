@@ -17,7 +17,10 @@ def grab_data(data):
 	output = ""
 	for d in data:
 		for i in ids:
-			output += '<div class="course-card">'
+			if output == "":
+				output = '<div class="course-card">'
+			else:
+				output += '<div class="course-card">'
 			#file.write('<div class="course-card">')
 			title = d.json_data[i]["title"]
 			string = f'<h3> {title} </h3>'
@@ -25,7 +28,7 @@ def grab_data(data):
 			#file.write(string)
 			#file.write('<div class="course-details">')
 
-			output += 'div class="course-details">'
+			output += '<div class="course-details">'
 
 			credit_hr = d.json_data[i]["billing"]["maximum"]
 			string = f'<p> {credit_hr} </p>'
@@ -37,5 +40,8 @@ def grab_data(data):
 			#file.write('</div>')
 
 	#file.close()
+	#with open("catelog_page.html", "w") as file:
+	#	file.write(output)
+	#	file.close()
 	return output
 

@@ -2,11 +2,13 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
 
+from django.utils.html import format_html
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
 from .models import ModelData, LoginForm, iChairData
 from django.views.decorators.csrf import csrf_exempt
+from .templatetags.custom_tags import grab_data
 import json
 
 
@@ -15,7 +17,9 @@ def home_page_view(request):
 
 def catalog_page_view(request):
 	data = ModelData.objects.all()
-	return render(request, "catalog_page.html", {'data': data})
+	html_string = grab_data(data)
+	output = {'html_string': format_html(html_string)}
+	return render(request, "catalog_page.html", output) #{'data': data})
 
 def complete_view(request):
 	return render(request, "pending.html")
