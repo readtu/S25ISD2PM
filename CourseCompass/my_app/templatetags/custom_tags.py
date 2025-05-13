@@ -5,6 +5,9 @@ register = template.Library()
 #def grab_data(data):
 #	return "<h3>HI</h3>"
 
+def term_value(date):
+	term_intiger = date[5,6]
+
 @register.simple_tag
 def grab_data(data):
 # def write_data(data):
@@ -31,12 +34,36 @@ def grab_data(data):
 
 			output += '<div class="course-details">'
 
+			description = d.json_data[i]["description"]
+			string = f'<p><strong>Description:</strong> {description}</p>'
+			output += string
+
 			credit_hr_max = d.json_data[i]["billing"]["maximum"]
 			string = f'<p><strong>Maximum Credit Hours:</strong> {credit_hr_max}</p>'
 			output += string
 
 			credit_hr_min = d.json_data[i]["billing"]["minimum"]
 			string = f'<p><strong>Minimum Credit Hours:</strong> {credit_hr_min}</p>'
+			output += string
+
+			course_ID = d.json_data[i]["id"]
+			string = f'<p><strong>Course ID:</strong> {course_ID}</p>'
+			output += string
+
+			location = d.json_data[i]["reportingDetail"]["type"]
+			string = f'<p><strong>Location:</strong> {location}</p>'
+			output += string
+
+			start_date = d.json_data[i]["schedulingStartOn"][0,10]
+			string = f'<p><strong>Start Date:</strong> {start_date}</p>'
+			output += string
+
+			end_date = d.json_data[i]["schedulingEndOn"][0,10]
+			string = f'<p><strong>End Date:</strong> {end_date}</p>'
+			output += string
+
+			start_date = d.json_data[i]["schedulingStartOn"][0,10]
+			string = f'<p><strong>Start Date:</strong> {start_date}</p>'
 			output += string
 
 			#file.write(string)
