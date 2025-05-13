@@ -50,9 +50,10 @@ def grab_data(data):
 			string = f'<p><strong>Course ID:</strong> {course_ID}</p>'
 			output += string
 
-			#location = d.json_data[i]["reportingDetail"]["type"]
-			#string = f'<p><strong>Location:</strong> {location}</p>'
-			#output += string
+			if d.json_data[i]["reportingDetail"]:
+				location = d.json_data[i]["reportingDetail"]["type"]
+				string = f'<p><strong>Location:</strong> {location}</p>'
+				output += string
 
 			start_date = d.json_data[i]["schedulingStartOn"][0:10]
 			string = f'<p><strong>Start Date:</strong> {start_date}</p>'
@@ -62,9 +63,9 @@ def grab_data(data):
 			string = f'<p><strong>End Date:</strong> {end_date}</p>'
 			output += string
 
-			#start_date = d.json_data[i]["schedulingStartOn"][0:10]
-			#string = f'<p><strong>Start Date:</strong> {start_date}</p>'
-			#output += string
+			start_date = d.json_data[i]["schedulingStartOn"][0:10]
+			string = f'<p><strong>Start Date:</strong> {start_date}</p>'
+			output += string
 
 			#file.write(string)
 			#file.write('</div>')
