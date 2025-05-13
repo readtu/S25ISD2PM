@@ -23,16 +23,22 @@ def grab_data(data):
 				output += '<div class="course-card">'
 			#file.write('<div class="course-card">')
 			title = d.json_data[i]["title"]
-			string = f'<h3> {title} </h3>'
+			number = d.json_data[i]["number"]
+			string = f'<h3> {number}: {title} </h3>'
 			output += string
 			#file.write(string)
 			#file.write('<div class="course-details">')
 
 			output += '<div class="course-details">'
 
-			credit_hr = d.json_data[i]["billing"]["maximum"]
-			string = f'<p> {credit_hr} </p>'
+			credit_hr_max = d.json_data[i]["billing"]["maximum"]
+			string = f'<p><strong>Maximum Credit Hours:</strong> {credit_hr_max}</p>'
 			output += string
+
+			credit_hr_min = d.json_data[i]["billing"]["minimum"]
+			string = f'<p><strong>Minimum Credit Hours:</strong> {credit_hr_min}</p>'
+			output += string
+
 			#file.write(string)
 			#file.write('</div>')
 			output += '</div>'
