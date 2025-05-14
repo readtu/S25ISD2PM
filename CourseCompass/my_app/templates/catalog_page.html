@@ -212,7 +212,9 @@
 
   function applyFilters() {
     courseCards.forEach(card => {
-      const details = card.querySelector('.course-details').textContent.toLowerCase();
+      //const details = card.querySelector('.course-details').textContent.toLowerCase();
+      const details = card.querySelector('.course-details.description').textContent.toLowerCase();
+
       const matches =
         (!filters.day.value || details.includes(filters.day.value.toLowerCase())) &&
         (!filters.professor.value || details.includes(filters.professor.value.toLowerCase())) &&
