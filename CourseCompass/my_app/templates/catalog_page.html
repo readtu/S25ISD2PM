@@ -99,6 +99,22 @@
     <option value="Reede">Reede</option>
   </select>
 
+  <label for="location">Location:</label>
+  <select id="location">
+    <option value="">Select a location</option>
+    <option value="Nebraska">Nebraska</option>
+    <option value="None">None</option>
+  </select>
+
+  <label for="max_credit_hour">Credit Hour:</label>
+  <select id="max_credit_hour">
+    <option value="">Select a maximum credit hour</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+
   <button id="reset-filters">Reset Filters</button>
 </div>
 
@@ -184,7 +200,10 @@
     term: document.getElementById('term-filter'),
     time: document.getElementById('time-filter'),
     month: document.getElementById('month-filter'),
-    building: document.getElementById('building')
+    building: document.getElementById('building'),
+    location: document.getElementById('location'),
+    max_credit_hour: document.getElementById('max_credit_hour'),
+
   };
 
   const courseCards = document.querySelectorAll('.course-card');
@@ -198,7 +217,10 @@
         (!filters.term.value || details.includes(filters.term.value.toLowerCase())) &&
         (!filters.time.value || details.includes(filters.time.value.toLowerCase())) &&
         (!filters.month.value || details.includes(filters.month.value.toLowerCase())) &&
-        (!filters.building.value || details.includes(filters.building.value.toLowerCase()));
+        (!filters.building.value || details.includes(filters.building.value.toLowerCase())) &&
+        (!filters.location.value || details.includes(filters.location.value.toLowerCase())) &&
+        (!filters.max_credit_hour.value || details.includes(filters.max_credit_hour.value.toLowerCase()));
+
       card.style.display = matches ? 'block' : 'none';
     });
   }
