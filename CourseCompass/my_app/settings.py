@@ -161,26 +161,18 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
         'file': {
-            'level': 'DEBUG',  # or INFO
+            'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs', 'django.log'),
+            'filename': '/S25ISD2PM/CourseCompass/log/django.log',
         },
     },
     'loggers': {
         'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',  # or INFO
-            'propagate': True,
-        },
-        # Optional: add custom logger for your app
-        'my_app': {
             'handlers': ['file'],
             'level': 'DEBUG',
             'propagate': True,
