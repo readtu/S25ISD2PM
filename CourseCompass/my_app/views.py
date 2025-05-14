@@ -2,20 +2,26 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
 
+from django.utils.html import format_html
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login
 from django.http import JsonResponse
 from .models import ModelData, LoginForm, iChairData
 from django.views.decorators.csrf import csrf_exempt
+from .templatetags.custom_tags import grab_data
 import json
+import logging
 
+logger = logging.getLogger(__name__)
 
 def home_page_view(request):
 	return render(request, "home_page.html")
 
 def catalog_page_view(request):
 	data = ModelData.objects.all()
-	return render(request, "catalog_page.html", {'data': data})
+	html_string = grab_data(data)
+	output = {'html_string': format_html(html_string)}
+	return render(request, "catalog_page.html", output) #{'data': data})
 
 def complete_view(request):
 	return render(request, "pending.html")
@@ -49,18 +55,31 @@ def login_view(request):
 
 @csrf_exempt
 def receive_json(request):
+    logger.debug("This is a debug message")
+    logger.info("This is an info message")
+    logger.error("This is an error message")
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
+
+            print("Received JSON:", data)
+
             iChairData.objects.create(
 	            termCode = data.get("term_code"),
                 termNum = data.get("term_name"),
                 crn = data.get("crn"),
 	        )
             return JsonResponse({"status": "success"})
+
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
+
     return JsonResponse({"error": "Only POST allowed"}, status=405)
+    print("Received data:", request.body)
+    return JsonResponse({"status": "ok"})
+
+    logger.info("Received request with body: %s", request.body)
+    return JsonResponse({"status": "ok"})
 
 #def modelData_view(request):
 #	data = ModelData.objects.all()

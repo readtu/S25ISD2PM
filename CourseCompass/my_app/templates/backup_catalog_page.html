@@ -99,24 +99,6 @@
     <option value="Reede">Reede</option>
   </select>
 
-  <label for="location">Location:</label>
-  <select id="location">
-    <option value="">Select a location</option>
-    <option value="Nebraska">Nebraska</option>
-    <option value="None">None</option>
-  </select>
-
-  <label for="max_credit_hour">Credit Hour:</label>
-  <select id="max_credit_hour">
-    <option value="">Select a maximum credit hour</option>
-    <option value="1"> 1 </option>
-    <option value="2"> 2 </option>
-    <option value="3"> 3 </option>
-    <option value="4"> 4 </option>
-    <option value="none"> none </option>
-
-  </select>
-
   <button id="reset-filters">Reset Filters</button>
 </div>
 
@@ -125,14 +107,9 @@
   <div class="course-card">
     <h3></h3>
     <div class="course-details">
-      <p><strong>Description</strong></p>
-      <p><strong>Maximum Credits</strong></p>
-      <p><strong>Mininum Credits</strong></p>
-      <p><strong>Course ID</strong></p>
-      <p><strong>Location</strong></p>
-      <p><strong>Start Date</strong></p>
-      <p><strong>End Date</strong></p>
-      <p><strong>Term</strong></p>
+      <p><strong>Credit Hour</strong></p>
+      <p><strong></strong></p>
+
     </div>
   </div> 
   
@@ -174,8 +151,6 @@
   </div>
 </div>
 
-{{ html_string }}
-
 <script>
   const toggleCarrot = document.getElementById('toggle-carrot');
   const contentSections = document.querySelectorAll('.content');
@@ -202,10 +177,7 @@
     term: document.getElementById('term-filter'),
     time: document.getElementById('time-filter'),
     month: document.getElementById('month-filter'),
-    building: document.getElementById('building'),
-    location: document.getElementById('location'),
-    max_credit_hour: document.getElementById('max_credit_hour'),
-
+    building: document.getElementById('building')
   };
 
   const courseCards = document.querySelectorAll('.course-card');
@@ -213,19 +185,13 @@
   function applyFilters() {
     courseCards.forEach(card => {
       const details = card.querySelector('.course-details').textContent.toLowerCase();
-      //const details = card.getElementByClassName('.course-details').textContent.toLowerCase();
-      building_var = details.
-
       const matches =
         (!filters.day.value || details.includes(filters.day.value.toLowerCase())) &&
         (!filters.professor.value || details.includes(filters.professor.value.toLowerCase())) &&
         (!filters.term.value || details.includes(filters.term.value.toLowerCase())) &&
         (!filters.time.value || details.includes(filters.time.value.toLowerCase())) &&
         (!filters.month.value || details.includes(filters.month.value.toLowerCase())) &&
-        (!filters.building.value || details.includes(filters.building.value.toLowerCase())) &&
-        (!filters.location.value || details.includes(filters.location.value.toLowerCase())) &&
-        (!filters.max_credit_hour.value || details.includes(filters.max_credit_hour.value.toLowerCase()));
-
+        (!filters.building.value || details.includes(filters.building.value.toLowerCase()));
       card.style.display = matches ? 'block' : 'none';
     });
   }
@@ -245,6 +211,9 @@
 
 
 <!-- This section was made by Joshua to test database connection -->
+
+{% load ../pullData %}
+{{ grab_data(data) }}
 
 
 
