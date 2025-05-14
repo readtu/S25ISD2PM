@@ -10,7 +10,9 @@ from .models import ModelData, LoginForm, iChairData
 from django.views.decorators.csrf import csrf_exempt
 from .templatetags.custom_tags import grab_data
 import json
+import logging
 
+logger = logging.getLogger(__name__)
 
 def home_page_view(request):
 	return render(request, "home_page.html")
@@ -72,7 +74,8 @@ def receive_json(request):
     #return JsonResponse({"error": "Only POST allowed"}, status=405)
     #print("Received data:", request.body)
     #return JsonResponse({"status": "ok"})
-    return JsonResponse({"hit": True})
+    logger.info("Received request with body: %s", request.body)
+    return JsonResponse({"status": "ok"})
 
 #def modelData_view(request):
 #	data = ModelData.objects.all()
