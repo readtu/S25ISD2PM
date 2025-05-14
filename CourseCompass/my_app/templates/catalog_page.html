@@ -214,7 +214,7 @@
     courseCards.forEach(card => {
       const details = card.querySelector('.course-details').textContent.toLowerCase();
       //const details = card.getElementByClassName('.course-details').textContent.toLowerCase();
-      building_var = details.building.value.toLowerCase
+      building_var = details.
 
       const matches =
         (!filters.day.value || details.includes(filters.day.value.toLowerCase())) &&
@@ -222,7 +222,7 @@
         (!filters.term.value || details.includes(filters.term.value.toLowerCase())) &&
         (!filters.time.value || details.includes(filters.time.value.toLowerCase())) &&
         (!filters.month.value || details.includes(filters.month.value.toLowerCase())) &&
-        (!filters.building.value || building_var.includes(filters.building.value.toLowerCase())) &&
+        (!filters.building.value || details.includes(filters.building.value.toLowerCase())) &&
         (!filters.location.value || details.includes(filters.location.value.toLowerCase())) &&
         (!filters.max_credit_hour.value || details.includes(filters.max_credit_hour.value.toLowerCase()));
 
