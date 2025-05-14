@@ -55,6 +55,9 @@ def login_view(request):
 
 @csrf_exempt
 def receive_json(request):
+    logger.debug("This is a debug message")
+    logger.info("This is an info message")
+    logger.error("This is an error message")
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
@@ -74,7 +77,7 @@ def receive_json(request):
     return JsonResponse({"error": "Only POST allowed"}, status=405)
     print("Received data:", request.body)
     return JsonResponse({"status": "ok"})
-    
+
     logger.info("Received request with body: %s", request.body)
     return JsonResponse({"status": "ok"})
 
