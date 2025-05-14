@@ -129,7 +129,7 @@
       <div><strong>Maximum Credits</strong></div>
       <div><strong>Mininum Credits</strong></div>
       <div><strong>Course ID</strong></div>
-      <div><strong>Location</strong></div>
+      <div class = "building"><strong>Location</strong></div>
       <div><strong>Start Date</strong></div>
       <div><strong>End Date</strong></div>
       <div><strong>Term</strong></div>
@@ -213,7 +213,7 @@
   function applyFilters() {
     courseCards.forEach(card => {
       //const details = card.querySelector('.course-details').textContent.toLowerCase();
-      const details = card.querySelector('.course-details.description').textContent.toLowerCase();
+      const details = card.querySelector('.course-details.building').textContent.toLowerCase();
 
       const matches =
         (!filters.day.value || details.includes(filters.day.value.toLowerCase())) &&
