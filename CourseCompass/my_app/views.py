@@ -70,8 +70,9 @@ def receive_json(request):
     #        return JsonResponse({"error": "Invalid JSON"}, status=400)
 
     #return JsonResponse({"error": "Only POST allowed"}, status=405)
-    print("Received data:", request.body)
-    return JsonResponse({"status": "ok"})
+    #print("Received data:", request.body)
+    #return JsonResponse({"status": "ok"})
+    return JsonResponse({"hit": True})
 
 #def modelData_view(request):
 #	data = ModelData.objects.all()
