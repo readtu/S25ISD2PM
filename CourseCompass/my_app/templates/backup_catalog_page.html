@@ -107,14 +107,9 @@
   <div class="course-card">
     <h3></h3>
     <div class="course-details">
-      <p><strong>Description</strong></p>
-      <p><strong>Maximum Credits</strong></p>
-      <p><strong>Mininum Credits</strong></p>
-      <p><strong>Course ID</strong></p>
-      <p><strong>Location</strong></p>
-      <p><strong>Start Date</strong></p>
-      <p><strong>End Date</strong></p>
-      <p><strong>Term</strong></p>
+      <p><strong>Credit Hour</strong></p>
+      <p><strong></strong></p>
+
     </div>
   </div> 
   
@@ -155,8 +150,6 @@
     </div>
   </div>
 </div>
-
-{{ html_string }}
 
 <script>
   const toggleCarrot = document.getElementById('toggle-carrot');
@@ -218,6 +211,9 @@
 
 
 <!-- This section was made by Joshua to test database connection -->
+
+{% load ../pullData %}
+{{ grab_data(data) }}
 
 
 
