@@ -11,3 +11,9 @@ class LoginForm(AuthenticationForm):
 
 class ModelData(models.Model):
 	json_data = models.JSONField()
+
+class iChairData(models.Model):
+    termCode = models.CharField(max_length=100)
+    termNum = models.CharField(max_length=100)
+    crn = models.CharField(max_length=100)
+
