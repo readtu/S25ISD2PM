@@ -69,6 +69,13 @@ def receive_json(request):
                 termNum = data.get("term_name"),
                 crn = data.get("crn"),
 	        )
+
+            iChairData.objects.create(
+                termCode = "123"
+                termNum = "456"
+                crn = "789"
+            )
+            
             return JsonResponse({"status": "success"})
 
         except json.JSONDecodeError:
