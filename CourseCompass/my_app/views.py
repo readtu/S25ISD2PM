@@ -58,6 +58,13 @@ def receive_json(request):
     logger.debug("This is a debug message")
     logger.info("This is an info message")
     logger.error("This is an error message")
+
+    obj = iChairData.objects.create(
+    termCode = "TESTTERM",
+    termNum = "TESTNUM",
+    crn = "12345"
+    )
+print("Created object ID:", obj.id)
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
@@ -69,6 +76,13 @@ def receive_json(request):
                 termNum = data.get("term_name"),
                 crn = data.get("crn"),
 	        )
+
+            iChairData.objects.create(
+                termCode = "123"
+                termNum = "456"
+                crn = "789"
+            )
+            
             return JsonResponse({"status": "success"})
 
         except json.JSONDecodeError:
