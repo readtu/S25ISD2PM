@@ -55,45 +55,45 @@ def login_view(request):
 
 @csrf_exempt
 def receive_json(request):
+    # Initial logging
     logger.debug("This is a debug message")
     logger.info("This is an info message")
     logger.error("This is an error message")
 
+    # Create a test object
     obj = iChairData.objects.create(
-    termCode = "TESTTERM",
-    termNum = "TESTNUM",
-    crn = "12345"
+        termCode="TESTTERM",
+        termNum="TESTNUM",
+        crn="12345"
     )
-print("Created object ID:", obj.id)
+    print("Created object ID:", obj.id)
+
+    # Only accept POST
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-
             print("Received JSON:", data)
 
+            # Create from incoming payload
             iChairData.objects.create(
-	            termCode = data.get("term_code"),
-                termNum = data.get("term_name"),
-                crn = data.get("crn"),
-	        )
-
-            iChairData.objects.create(
-                termCode = "123"
-                termNum = "456"
-                crn = "789"
+                termCode=data.get("term_code"),
+                termNum=data.get("term_name"),
+                crn=data.get("crn"),
             )
-            
-            return JsonResponse({"status": "success"})
 
+            # Example hard-coded entry
+            iChairData.objects.create(
+                termCode="123",
+                termNum="456",
+                crn="789",
+            )
+
+            return JsonResponse({"status": "success"})
         except json.JSONDecodeError:
             return JsonResponse({"error": "Invalid JSON"}, status=400)
 
+    # If not POST, return an error
     return JsonResponse({"error": "Only POST allowed"}, status=405)
-    print("Received data:", request.body)
-    return JsonResponse({"status": "ok"})
-
-    logger.info("Received request with body: %s", request.body)
-    return JsonResponse({"status": "ok"})
 
 #def modelData_view(request):
 #	data = ModelData.objects.all()
